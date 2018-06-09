@@ -6,10 +6,43 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		5B3EFA3E20C7D5A90083F07B /* CommonCryptoModuleMap */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 5B3EFA3F20C7D5A90083F07B /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
+			buildPhases = (
+				5B3EFA4220C7D5B40083F07B /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonCryptoModuleMap;
+			productName = CommonCryptoModuleMap;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
 		5B3EFA3120C7D5600083F07B /* CoinbaseProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProTests.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */; };
+		5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA4520C7D6E10083F07B /* Extensions.swift */; };
+		5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA4820C7D7B30083F07B /* APICredentials.swift */; };
+		5B3EFA5120C7DEA70083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
+		5B3EFA5920C7E0360083F07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5820C7E0360083F07B /* AppDelegate.swift */; };
+		5B3EFA5B20C7E0360083F07B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5A20C7E0360083F07B /* ViewController.swift */; };
+		5B3EFA5E20C7E0360083F07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5C20C7E0360083F07B /* Main.storyboard */; };
+		5B3EFA6020C7E0370083F07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5F20C7E0370083F07B /* Assets.xcassets */; };
+		5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */; };
+		5B3EFA6E20C7E0370083F07B /* LittleJohnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */; };
+		5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
+		5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
+		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA7F20C7E1E10083F07B /* Account.swift */; };
+		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
+		5B3EFA8420C7F90C0083F07B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Network.swift */; };
+		5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8920C813460083F07B /* CBPAccounts.swift */; };
+		5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41620CBC8FF0000F704 /* Logger.swift */; };
+		5B72B41920CBE72F0000F704 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41820CBE72F0000F704 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +53,42 @@
 			remoteGlobalIDString = 5B3EFA2120C7D5600083F07B;
 			remoteInfo = CoinbasePro;
 		};
+		5B3EFA4320C7D5C60083F07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3EFA1920C7D5600083F07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3EFA3E20C7D5A90083F07B;
+			remoteInfo = CommonCryptoModuleMap;
+		};
+		5B3EFA6A20C7E0370083F07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3EFA1920C7D5600083F07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3EFA5520C7E0360083F07B;
+			remoteInfo = LittleJohn;
+		};
+		5B3EFA7A20C7E0820083F07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3EFA1920C7D5600083F07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3EFA2120C7D5600083F07B;
+			remoteInfo = CoinbasePro;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5B3EFA7C20C7E0820083F07B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +97,28 @@
 		5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinbaseProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA3020C7D5600083F07B /* CoinbaseProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProTests.swift; sourceTree = "<group>"; };
 		5B3EFA3220C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbasePro.swift; sourceTree = "<group>"; };
+		5B3EFA4520C7D6E10083F07B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5B3EFA4820C7D7B30083F07B /* APICredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentials.swift; sourceTree = "<group>"; };
+		5B3EFA4E20C7DC400083F07B /* Siesta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Siesta.framework; path = Carthage/Build/iOS/Siesta.framework; sourceTree = "<group>"; };
+		5B3EFA5020C7DEA70083F07B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5B3EFA5620C7E0360083F07B /* LittleJohn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LittleJohn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3EFA5820C7E0360083F07B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B3EFA5A20C7E0360083F07B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B3EFA5D20C7E0360083F07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B3EFA5F20C7E0370083F07B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B3EFA6220C7E0370083F07B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B3EFA6420C7E0370083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B3EFA6920C7E0370083F07B /* LittleJohnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleJohnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleJohnTests.swift; sourceTree = "<group>"; };
+		5B3EFA6F20C7E0370083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B3EFA7F20C7E1E10083F07B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProError.swift; sourceTree = "<group>"; };
+		5B3EFA8320C7F90C0083F07B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5B3EFA8920C813460083F07B /* CBPAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPAccounts.swift; sourceTree = "<group>"; };
+		5B72B41220CB24C80000F704 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = SOURCE_ROOT; };
+		5B72B41620CBC8FF0000F704 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		5B72B41820CBE72F0000F704 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3EFA5120C7DEA70083F07B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +138,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B3EFA5320C7E0360083F07B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */,
+				5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3EFA6620C7E0370083F07B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,7 +162,10 @@
 			children = (
 				5B3EFA2420C7D5600083F07B /* CoinbasePro */,
 				5B3EFA2F20C7D5600083F07B /* CoinbaseProTests */,
+				5B3EFA5720C7E0360083F07B /* LittleJohn */,
+				5B3EFA6C20C7E0370083F07B /* LittleJohnTests */,
 				5B3EFA2320C7D5600083F07B /* Products */,
+				5B3EFA4D20C7DC400083F07B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +174,8 @@
 			children = (
 				5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */,
 				5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */,
+				5B3EFA5620C7E0360083F07B /* LittleJohn.app */,
+				5B3EFA6920C7E0370083F07B /* LittleJohnTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +185,13 @@
 			children = (
 				5B3EFA2520C7D5600083F07B /* CoinbasePro.h */,
 				5B3EFA2620C7D5600083F07B /* Info.plist */,
+				5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */,
+				5B3EFA8B20C813500083F07B /* Extensions */,
+				5B3EFA8720C7FA1B0083F07B /* Networking */,
+				5B3EFA4A20C7D7B70083F07B /* Models */,
+				5B3EFA8820C7FC640083F07B /* Errors */,
+				5B3EFA8C20C813840083F07B /* API */,
+				5B72B41520CBC8060000F704 /* Logging */,
 			);
 			path = CoinbasePro;
 			sourceTree = "<group>";
@@ -84,6 +203,88 @@
 				5B3EFA3220C7D5600083F07B /* Info.plist */,
 			);
 			path = CoinbaseProTests;
+			sourceTree = "<group>";
+		};
+		5B3EFA4A20C7D7B70083F07B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA7F20C7E1E10083F07B /* Account.swift */,
+				5B72B41820CBE72F0000F704 /* APIError.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5B3EFA4D20C7DC400083F07B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA5020C7DEA70083F07B /* Alamofire.framework */,
+				5B3EFA4E20C7DC400083F07B /* Siesta.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B3EFA5720C7E0360083F07B /* LittleJohn */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B41220CB24C80000F704 /* Config.plist */,
+				5B3EFA5820C7E0360083F07B /* AppDelegate.swift */,
+				5B3EFA5A20C7E0360083F07B /* ViewController.swift */,
+				5B3EFA5C20C7E0360083F07B /* Main.storyboard */,
+				5B3EFA5F20C7E0370083F07B /* Assets.xcassets */,
+				5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */,
+				5B3EFA6420C7E0370083F07B /* Info.plist */,
+			);
+			path = LittleJohn;
+			sourceTree = "<group>";
+		};
+		5B3EFA6C20C7E0370083F07B /* LittleJohnTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */,
+				5B3EFA6F20C7E0370083F07B /* Info.plist */,
+			);
+			path = LittleJohnTests;
+			sourceTree = "<group>";
+		};
+		5B3EFA8720C7FA1B0083F07B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
+				5B3EFA8320C7F90C0083F07B /* Network.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		5B3EFA8820C7FC640083F07B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */,
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
+		5B3EFA8B20C813500083F07B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA4520C7D6E10083F07B /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5B3EFA8C20C813840083F07B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA8920C813460083F07B /* CBPAccounts.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		5B72B41520CBC8060000F704 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B41620CBC8FF0000F704 /* Logger.swift */,
+			);
+			name = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,10 +309,12 @@
 				5B3EFA1E20C7D5600083F07B /* Frameworks */,
 				5B3EFA1F20C7D5600083F07B /* Headers */,
 				5B3EFA2020C7D5600083F07B /* Resources */,
+				5B3EFA4720C7D75A0083F07B /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5B3EFA4420C7D5C60083F07B /* PBXTargetDependency */,
 			);
 			name = CoinbasePro;
 			productName = CoinbasePro;
@@ -136,6 +339,45 @@
 			productReference = 5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		5B3EFA5520C7E0360083F07B /* LittleJohn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B3EFA7020C7E0370083F07B /* Build configuration list for PBXNativeTarget "LittleJohn" */;
+			buildPhases = (
+				5B3EFA5220C7E0360083F07B /* Sources */,
+				5B3EFA5320C7E0360083F07B /* Frameworks */,
+				5B3EFA5420C7E0360083F07B /* Resources */,
+				5B3EFA7C20C7E0820083F07B /* Embed Frameworks */,
+				5B3EFA7D20C7E08E0083F07B /* Carthage */,
+				5B72B41120CB242D0000F704 /* Configuration */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B3EFA7B20C7E0820083F07B /* PBXTargetDependency */,
+			);
+			name = LittleJohn;
+			productName = LittleJohn;
+			productReference = 5B3EFA5620C7E0360083F07B /* LittleJohn.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B3EFA6820C7E0370083F07B /* LittleJohnTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B3EFA7320C7E0370083F07B /* Build configuration list for PBXNativeTarget "LittleJohnTests" */;
+			buildPhases = (
+				5B3EFA6520C7E0370083F07B /* Sources */,
+				5B3EFA6620C7E0370083F07B /* Frameworks */,
+				5B3EFA6720C7E0370083F07B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B3EFA6B20C7E0370083F07B /* PBXTargetDependency */,
+			);
+			name = LittleJohnTests;
+			productName = LittleJohnTests;
+			productReference = 5B3EFA6920C7E0370083F07B /* LittleJohnTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,9 +390,20 @@
 				TargetAttributes = {
 					5B3EFA2120C7D5600083F07B = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					5B3EFA2A20C7D5600083F07B = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					5B3EFA3E20C7D5A90083F07B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					5B3EFA5520C7E0360083F07B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					5B3EFA6820C7E0370083F07B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 5B3EFA5520C7E0360083F07B;
 					};
 				};
 			};
@@ -160,6 +413,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 5B3EFA1820C7D5600083F07B;
 			productRefGroup = 5B3EFA2320C7D5600083F07B /* Products */;
@@ -168,6 +422,9 @@
 			targets = (
 				5B3EFA2120C7D5600083F07B /* CoinbasePro */,
 				5B3EFA2A20C7D5600083F07B /* CoinbaseProTests */,
+				5B3EFA3E20C7D5A90083F07B /* CommonCryptoModuleMap */,
+				5B3EFA5520C7E0360083F07B /* LittleJohn */,
+				5B3EFA6820C7E0370083F07B /* LittleJohnTests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,13 +444,99 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B3EFA5420C7E0360083F07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */,
+				5B3EFA6020C7E0370083F07B /* Assets.xcassets in Resources */,
+				5B3EFA5E20C7E0360083F07B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3EFA6720C7E0370083F07B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B3EFA4220C7D5B40083F07B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "# This if-statement means we'll only run the main script if the CommonCryptoModuleMap directory doesn't exist\n# Because otherwise the rest of the script causes a full recompile for anything where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger the rest of the script to run\nif [ -d \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\" ]; then\necho \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap directory already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
+		};
+		5B3EFA4720C7D75A0083F07B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"${CONFIGURATION}\" = \"Debug\" ]] && [ -z ${CIRCLECI} ] && which swiftlint >/dev/null; then\nswiftlint\nfi";
+		};
+		5B3EFA7D20C7E08E0083F07B /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		5B72B41120CB242D0000F704 /* Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Configuration;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "CONFIG_PLIST=\"${SRCROOT}/Config.plist\"\nif [ -f $AUTH0_PLIST ];\nthen\ncp \"$CONFIG_PLIST\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B3EFA1D20C7D5600083F07B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */,
+				5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */,
+				5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */,
+				5B3EFA8420C7F90C0083F07B /* Network.swift in Sources */,
+				5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */,
+				5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */,
+				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
+				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
+				5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +548,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5B3EFA5220C7E0360083F07B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3EFA5B20C7E0360083F07B /* ViewController.swift in Sources */,
+				5B3EFA5920C7E0360083F07B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B3EFA6520C7E0370083F07B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B3EFA6E20C7E0370083F07B /* LittleJohnTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,7 +573,41 @@
 			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro */;
 			targetProxy = 5B3EFA2D20C7D5600083F07B /* PBXContainerItemProxy */;
 		};
+		5B3EFA4420C7D5C60083F07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3EFA3E20C7D5A90083F07B /* CommonCryptoModuleMap */;
+			targetProxy = 5B3EFA4320C7D5C60083F07B /* PBXContainerItemProxy */;
+		};
+		5B3EFA6B20C7E0370083F07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3EFA5520C7E0360083F07B /* LittleJohn */;
+			targetProxy = 5B3EFA6A20C7E0370083F07B /* PBXContainerItemProxy */;
+		};
+		5B3EFA7B20C7E0820083F07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro */;
+			targetProxy = 5B3EFA7A20C7E0820083F07B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B3EFA5C20C7E0360083F07B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B3EFA5D20C7E0360083F07B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B3EFA6220C7E0370083F07B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5B3EFA3420C7D5600083F07B /* Debug */ = {
@@ -339,14 +733,20 @@
 		5B3EFA3720C7D5600083F07B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinbasePro/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,6 +755,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbasePro;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,14 +765,20 @@
 		5B3EFA3820C7D5600083F07B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinbasePro/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -379,6 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbasePro;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -387,6 +796,7 @@
 		5B3EFA3A20C7D5600083F07B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinbaseProTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -404,6 +814,7 @@
 		5B3EFA3B20C7D5600083F07B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CoinbaseProTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -415,6 +826,108 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5B3EFA4020C7D5A90083F07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5B3EFA4120C7D5A90083F07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5B3EFA7120C7E0370083F07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = LittleJohn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B3EFA7220C7E0370083F07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = LittleJohn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5B3EFA7420C7E0370083F07B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LittleJohnTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleJohn.app/LittleJohn";
+			};
+			name = Debug;
+		};
+		5B3EFA7520C7E0370083F07B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LittleJohnTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohnTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleJohn.app/LittleJohn";
 			};
 			name = Release;
 		};
@@ -444,6 +957,33 @@
 			buildConfigurations = (
 				5B3EFA3A20C7D5600083F07B /* Debug */,
 				5B3EFA3B20C7D5600083F07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B3EFA3F20C7D5A90083F07B /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3EFA4020C7D5A90083F07B /* Debug */,
+				5B3EFA4120C7D5A90083F07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B3EFA7020C7E0370083F07B /* Build configuration list for PBXNativeTarget "LittleJohn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3EFA7120C7E0370083F07B /* Debug */,
+				5B3EFA7220C7E0370083F07B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B3EFA7320C7E0370083F07B /* Build configuration list for PBXNativeTarget "LittleJohnTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B3EFA7420C7E0370083F07B /* Debug */,
+				5B3EFA7520C7E0370083F07B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
