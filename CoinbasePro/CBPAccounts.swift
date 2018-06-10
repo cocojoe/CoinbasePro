@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// [Accounts API](https://docs.gdax.com/#accounts)
 public struct CBPAccounts {
 
     private let dataModel = Account.self
@@ -21,6 +22,7 @@ public struct CBPAccounts {
     /// Get a list of trading accounts.
     ///
     /// - Parameter callback: Closure that yields account information or error.
+    /// - SeeAlso: [Accounts API](https://docs.gdax.com/#accounts)
     public func getAccounts(callback: @escaping (CoinbaseProError?, [Account]?) -> Void) {
         self.network.requestArray(model: self.dataModel, method: "GET", path: self.requestPath, callback: callback)
     }

@@ -6,18 +6,28 @@
 //  Copyright © 2018 Martin. All rights reserved.
 //
 
-import Alamofire
+import Foundation
+
+/// Networkable
+/// Adpot this protocol if you want to create your own network object for handling API requests
+public protocol Networkable {
+    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void)
+}
 
 struct Network: Loggable {
 
     private let credentials: APICredentials
+    private let network: Networkable
 
-    init(withAPIKey key: String, secret: String, phrase: String, baseURL: String?) {
+    init(withAPIKey key: String, secret: String, phrase: String, baseURL: String? = nil, network: Networkable? = nil) {
         self.credentials = APICredentials(key: key, secret: secret, phrase: phrase, baseURL: baseURL)
+        self.network = network ?? NetworkFire()
     }
 
     func requestArray<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, [T]?) -> Void) where T: Decodable {
-        self.makeRequest(method: method, path: path, parameters: parameters) { error, jsonData in
+        let signedHeader = credentials.signedHeader(method: method, requestPath: path)
+        let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
+        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
             guard error == nil, let jsonData = jsonData else {
                 return callback(error, nil)
             }
@@ -32,44 +42,19 @@ struct Network: Loggable {
     }
 
     func request<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, T?) -> Void) where T: Decodable {
-        self.makeRequest(method: method, path: path, parameters: parameters) { error, jsonData in
+        let signedHeader = credentials.signedHeader(method: method, requestPath: path)
+        let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
+        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
             guard error == nil, let jsonData = jsonData else {
                 return callback(error, nil)
             }
             do {
-                let result = try JSONDecoder().decode(APIError.self, from: jsonData)
-                return callback(nil, result as? T)
+                let result = try JSONDecoder().decode(model.self, from: jsonData)
+                return callback(nil, result)
             } catch let parseError {
                 self.logger.error("JSON parsing failed: \(parseError)")
                 return callback(.dataError, nil)
             }
-        }
-    }
-
-    private func makeRequest(method: String, path: String, parameters: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void) {
-        let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
-        self.logger.verbose("request: \(requestURL.absoluteString)")
-        Alamofire.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: credentials.signMessage(method: method, requestPath: path))
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .responseJSON { response in
-                switch response.result {
-                case .success:
-                    guard let jsonData = response.data else {
-                        self.logger.error("JSON parsing failed")
-                        return callback(.dataError, nil)
-                    }
-                    return callback(nil, jsonData)
-                case .failure(let error):
-                    if  let errorData = response.data,
-                        let errorInfo = try? JSONDecoder().decode(APIError.self, from: errorData) {
-                        self.logger.error("Request failed: \(errorInfo.description)")
-                        return callback(.networkError, nil)
-                    } else {
-                        self.logger.error("Request failed: \(error.localizedDescription)")
-                        return callback(.networkError, nil)
-                    }
-                }
         }
     }
 }

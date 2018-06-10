@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Logger {
+class Logger {
 
     static let sharedInstance = Logger()
 

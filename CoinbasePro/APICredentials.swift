@@ -25,7 +25,7 @@ struct APICredentials {
         }
     }
 
-    func signMessage(method: String, requestPath: String, body: String? = nil) -> [String: String] {
+    func signedHeader(method: String, requestPath: String, body: String? = nil) -> [String: String] {
         let timeStamp = String(Int(Date().timeIntervalSince1970))
         let signature = timeStamp + method + requestPath + (body ?? "")
         let signatureSigned64 = signature.HMAC256Base64(withKey: self.secret.base64Decode()!)
