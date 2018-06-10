@@ -8,6 +8,10 @@
 
 import Foundation
 
+/// CoinbaseProErrors
+///
+/// - networkError: Something went wrong during the network request
+/// - dataError: Something went wrong during data decoding
 public enum CoinbaseProError: Error {
     case networkError
     case dataError

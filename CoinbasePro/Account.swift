@@ -8,12 +8,19 @@
 
 import Foundation
 
+/// Data Model for Account Information
+/// See [Account Fields](https://docs.gdax.com/#list-accounts)
 public struct Account {
 
+    /// funds available to withdraw or trade
     public let available: String
+    /// total funds in the account
     public let balance: String
+    /// the currency of the account
     public let currency: String
+    /// funds on hold (not available for use)
     public let hold: String
+    /// Account ID
     public let id: String
     public let profileId: String
 

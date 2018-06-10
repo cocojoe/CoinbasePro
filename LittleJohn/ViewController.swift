@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             }
             
             accounts.forEach { account in
-                //print(account)
+                print(account)
             }
 
             // Single Account
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
                 guard error == nil, let account = account else {
                     return print(error ?? "Generic Error")
                 }
-                //print(account)
+                print(account)
             }
         }
     }
