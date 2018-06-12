@@ -8,17 +8,11 @@
 
 import Alamofire
 
-public struct NetworkFire: Loggable, Networkable {
+struct NetworkFire: Loggable, Networkable {
 
-    let sessionManager: SessionManager
-
-    public init(withSessionManager manager: SessionManager? = nil) {
-        self.sessionManager = manager ??  Alamofire.SessionManager.default
-    }
-
-    public func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void) {
+    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void) {
         self.logger.verbose("request: \(requestURL.absoluteString)")
-        sessionManager.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: headers)
+        Alamofire.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: headers)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
