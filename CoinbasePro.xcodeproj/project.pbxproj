@@ -62,6 +62,10 @@
 		5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */; };
 		5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */; };
 		5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */; };
+		5BD873AA20CFF80800D36D56 /* BasicLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A920CFF80800D36D56 /* BasicLogger.swift */; };
+		5BD873AC20CFF82800D36D56 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873AB20CFF82800D36D56 /* Loggable.swift */; };
+		5BD873AE20D05B7800D36D56 /* LoggerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873AD20D05B7800D36D56 /* LoggerSpec.swift */; };
+		5BD873B120D05CCC00D36D56 /* MockLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873B020D05CCC00D36D56 /* MockLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +161,10 @@
 		5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorSpec.swift; sourceTree = "<group>"; };
 		5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPAccountsSpec.swift; sourceTree = "<group>"; };
 		5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFireSpec.swift; sourceTree = "<group>"; };
+		5BD873A920CFF80800D36D56 /* BasicLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicLogger.swift; sourceTree = "<group>"; };
+		5BD873AB20CFF82800D36D56 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		5BD873AD20D05B7800D36D56 /* LoggerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSpec.swift; sourceTree = "<group>"; };
+		5BD873B020D05CCC00D36D56 /* MockLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +256,7 @@
 				5B72B42A20CE63330000F704 /* Models */,
 				5B72B42B20CE634E0000F704 /* Extensions */,
 				5B72B42E20CE66CE0000F704 /* Network */,
-				5B72B43920CE76010000F704 /*  Models */,
+				5BD873AF20D05C8900D36D56 /* Logging */,
 			);
 			path = CoinbaseProTests;
 			sourceTree = "<group>";
@@ -335,6 +343,8 @@
 			isa = PBXGroup;
 			children = (
 				5B72B41620CBC8FF0000F704 /* Logger.swift */,
+				5BD873AB20CFF82800D36D56 /* Loggable.swift */,
+				5BD873A920CFF80800D36D56 /* BasicLogger.swift */,
 			);
 			name = Logging;
 			sourceTree = "<group>";
@@ -342,6 +352,7 @@
 		5B72B42A20CE63330000F704 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B72B43720CE75FD0000F704 /* SimpleModel.swift */,
 				5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */,
 				5B8D458020CEB09700D79BFB /* AccountSpec.swift */,
 				5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */,
@@ -367,14 +378,6 @@
 			name = Network;
 			sourceTree = "<group>";
 		};
-		5B72B43920CE76010000F704 /*  Models */ = {
-			isa = PBXGroup;
-			children = (
-				5B72B43720CE75FD0000F704 /* SimpleModel.swift */,
-			);
-			name = " Models";
-			sourceTree = "<group>";
-		};
 		5B72B43C20CE77D90000F704 /* JSONData */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +396,15 @@
 				5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		5BD873AF20D05C8900D36D56 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				5BD873B020D05CCC00D36D56 /* MockLogger.swift */,
+				5BD873AD20D05B7800D36D56 /* LoggerSpec.swift */,
+			);
+			name = Logging;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,6 +682,8 @@
 				5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */,
 				5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */,
 				5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */,
+				5BD873AC20CFF82800D36D56 /* Loggable.swift in Sources */,
+				5BD873AA20CFF80800D36D56 /* BasicLogger.swift in Sources */,
 				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
 				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
 				5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */,
@@ -683,6 +697,7 @@
 			files = (
 				5B72B43820CE75FD0000F704 /* SimpleModel.swift in Sources */,
 				5B72B42420CDB8AD0000F704 /* ExtensionsSpec.swift in Sources */,
+				5BD873AE20D05B7800D36D56 /* LoggerSpec.swift in Sources */,
 				5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */,
 				5B72B42D20CE66B20000F704 /* RequestSpec.swift in Sources */,
 				5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */,
@@ -690,6 +705,7 @@
 				5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */,
 				5B72B42720CDC30F0000F704 /* APICredentialsSpec.swift in Sources */,
 				5B72B43420CE70260000F704 /* Constants.swift in Sources */,
+				5BD873B120D05CCC00D36D56 /* MockLogger.swift in Sources */,
 				5B72B43620CE75CF0000F704 /* NetworkMock.swift in Sources */,
 				5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */,
 			);
