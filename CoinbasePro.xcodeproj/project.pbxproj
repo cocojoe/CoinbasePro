@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
+		5B3EFA2C20C7D5600083F07B /* CoinbasePro_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; };
 		5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */; };
@@ -35,8 +35,8 @@
 		5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */; };
 		5B3EFA6E20C7E0370083F07B /* LittleJohnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */; };
 		5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
-		5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
-		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3EFA7820C7E0820083F07B /* CoinbasePro_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; };
+		5B3EFA7920C7E0820083F07B /* CoinbasePro_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA7F20C7E1E10083F07B /* Account.swift */; };
 		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
 		5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Request.swift */; };
@@ -106,7 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */,
+				5B3EFA7920C7E0820083F07B /* CoinbasePro_iOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,10 +114,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA2520C7D5600083F07B /* CoinbasePro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinbasePro.h; sourceTree = "<group>"; };
 		5B3EFA2620C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinbaseProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinbaseProTests.iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProSpec.swift; sourceTree = "<group>"; };
 		5B3EFA3220C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbasePro.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 				5B72B41F20CDAF310000F704 /* Quick.framework in Frameworks */,
 				5B72B42020CDAF310000F704 /* Nimble.framework in Frameworks */,
 				5B72B42120CDAF310000F704 /* OHHTTPStubs.framework in Frameworks */,
-				5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */,
+				5B3EFA2C20C7D5600083F07B /* CoinbasePro_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +191,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */,
+				5B3EFA7820C7E0820083F07B /* CoinbasePro_iOS.framework in Frameworks */,
 				5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +221,8 @@
 		5B3EFA2320C7D5600083F07B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */,
-				5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */,
+				5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */,
+				5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.iOS.xctest */,
 				5B3EFA5620C7E0360083F07B /* LittleJohn.app */,
 				5B3EFA6920C7E0370083F07B /* LittleJohnTests.xctest */,
 			);
@@ -421,9 +421,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5B3EFA2120C7D5600083F07B /* CoinbasePro */ = {
+		5B3EFA2120C7D5600083F07B /* CoinbasePro.iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B3EFA3620C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbasePro" */;
+			buildConfigurationList = 5B3EFA3620C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbasePro.iOS" */;
 			buildPhases = (
 				5B3EFA1D20C7D5600083F07B /* Sources */,
 				5B3EFA1E20C7D5600083F07B /* Frameworks */,
@@ -436,14 +436,14 @@
 			dependencies = (
 				5B3EFA4420C7D5C60083F07B /* PBXTargetDependency */,
 			);
-			name = CoinbasePro;
+			name = CoinbasePro.iOS;
 			productName = CoinbasePro;
-			productReference = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */;
+			productReference = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5B3EFA2A20C7D5600083F07B /* CoinbaseProTests */ = {
+		5B3EFA2A20C7D5600083F07B /* CoinbaseProTests.iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5B3EFA3920C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbaseProTests" */;
+			buildConfigurationList = 5B3EFA3920C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbaseProTests.iOS" */;
 			buildPhases = (
 				5B3EFA2720C7D5600083F07B /* Sources */,
 				5B3EFA2820C7D5600083F07B /* Frameworks */,
@@ -455,9 +455,9 @@
 			dependencies = (
 				5B3EFA2E20C7D5600083F07B /* PBXTargetDependency */,
 			);
-			name = CoinbaseProTests;
+			name = CoinbaseProTests.iOS;
 			productName = CoinbaseProTests;
-			productReference = 5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */;
+			productReference = 5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		5B3EFA5520C7E0360083F07B /* LittleJohn */ = {
@@ -541,8 +541,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5B3EFA2120C7D5600083F07B /* CoinbasePro */,
-				5B3EFA2A20C7D5600083F07B /* CoinbaseProTests */,
+				5B3EFA2120C7D5600083F07B /* CoinbasePro.iOS */,
+				5B3EFA2A20C7D5600083F07B /* CoinbaseProTests.iOS */,
 				5B3EFA3E20C7D5A90083F07B /* CommonCryptoModuleMap */,
 				5B3EFA5520C7E0360083F07B /* LittleJohn */,
 				5B3EFA6820C7E0370083F07B /* LittleJohnTests */,
@@ -733,7 +733,7 @@
 /* Begin PBXTargetDependency section */
 		5B3EFA2E20C7D5600083F07B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro */;
+			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro.iOS */;
 			targetProxy = 5B3EFA2D20C7D5600083F07B /* PBXContainerItemProxy */;
 		};
 		5B3EFA4420C7D5C60083F07B /* PBXTargetDependency */ = {
@@ -748,7 +748,7 @@
 		};
 		5B3EFA7B20C7E0820083F07B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro */;
+			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro.iOS */;
 			targetProxy = 5B3EFA7A20C7E0820083F07B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1114,7 +1114,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B3EFA3620C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbasePro" */ = {
+		5B3EFA3620C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbasePro.iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B3EFA3720C7D5600083F07B /* Debug */,
@@ -1123,7 +1123,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5B3EFA3920C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbaseProTests" */ = {
+		5B3EFA3920C7D5600083F07B /* Build configuration list for PBXNativeTarget "CoinbaseProTests.iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B3EFA3A20C7D5600083F07B /* Debug */,
