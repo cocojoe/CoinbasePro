@@ -615,7 +615,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"${CONFIGURATION}\" = \"Debug\" ]] && [ -z ${CIRCLECI} ] && which swiftlint >/dev/null; then\nswiftlint\nfi";
+			shellScript = "if [[ \"${CONFIGURATION}\" = \"Debug\" ]] && [ -z ${TRAVIS} ] && which swiftlint >/dev/null; then\nswiftlint\nfi";
 		};
 		5B3EFA7D20C7E08E0083F07B /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
