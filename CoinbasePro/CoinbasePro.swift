@@ -11,9 +11,9 @@ import Foundation
 /// CoinbasePro
 public struct CoinbasePro: Loggable {
 
-    private let network: Network
+    let request: Request
 
-    /// Initialise CoinbasePro using your API keys. [More Information](https://docs.gdax.com/#private)
+    /// Initialise CoinbasePro using API keys. [More Information](https://docs.gdax.com/#private)
     ///
     /// - Parameters:
     ///   - key: The API Key
@@ -22,13 +22,11 @@ public struct CoinbasePro: Loggable {
     ///   - baseURL: The API environment BaseURL, this will default to the live environment if not specified
     ///   - network: Networking instance to use for all requests, see the `Networkable` Protocol to roll your own.
     public init(withAPIKey key: String, secret: String, phrase: String, baseURL: String? = nil, network: Networkable? = nil) {
-        self.network = Network(withAPIKey: key, secret: secret, phrase: phrase, baseURL: baseURL, network: network)
+        self.request = Request(withAPIKey: key, secret: secret, phrase: phrase, baseURL: baseURL, network: network)
     }
 
-    /// Create a new instance of CBPAccounts
-    ///
-    /// - Returns: A CBPAccounts instance
-    public func accounts() -> CBPAccounts {
-        return CBPAccounts(withNetwork: self.network)
+    /// Retrun an instance of CBPAccounts
+    public var accounts: CBPAccounts {
+        return CBPAccounts(request: self.request)
     }
 }

@@ -11,12 +11,12 @@ import Foundation
 /// [Accounts API](https://docs.gdax.com/#accounts)
 public struct CBPAccounts {
 
-    private let dataModel = Account.self
-    private let requestPath = "/accounts"
-    private let network: Network
+    let dataModel = Account.self
+    let requestPath = "/accounts"
+    let request: Request
 
-    internal init(withNetwork network: Network) {
-        self.network = network
+    internal init(request: Request) {
+        self.request = request
     }
 
     /// Get a list of trading accounts.
@@ -24,7 +24,7 @@ public struct CBPAccounts {
     /// - Parameter callback: Closure that yields account information or error.
     /// - SeeAlso: [Accounts API](https://docs.gdax.com/#accounts)
     public func getAccounts(callback: @escaping (CoinbaseProError?, [Account]?) -> Void) {
-        self.network.requestArray(model: self.dataModel, method: "GET", path: self.requestPath, callback: callback)
+        self.request.array(model: self.dataModel, method: "GET", path: self.requestPath, callback: callback)
     }
 
     /// Information for a single account. Use this endpoint when you know the account_id.
@@ -34,6 +34,6 @@ public struct CBPAccounts {
     ///   - callback: Closure that yields account information or error.
     public func getAccount(withID id: String, callback: @escaping (CoinbaseProError?, Account?) -> Void) {
         let requestPath = self.requestPath + "/" + id
-        self.network.request(model: self.dataModel, method: "GET", path: requestPath, callback: callback)
+        self.request.object(model: self.dataModel, method: "GET", path: requestPath, callback: callback)
     }
 }
