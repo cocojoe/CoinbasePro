@@ -22,7 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
-		5B3EFA3120C7D5600083F07B /* CoinbaseProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProTests.swift */; };
+		5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */; };
 		5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA4520C7D6E10083F07B /* Extensions.swift */; };
@@ -39,11 +39,29 @@
 		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA7F20C7E1E10083F07B /* Account.swift */; };
 		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
-		5B3EFA8420C7F90C0083F07B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Network.swift */; };
+		5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Request.swift */; };
 		5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8920C813460083F07B /* CBPAccounts.swift */; };
 		5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41620CBC8FF0000F704 /* Logger.swift */; };
 		5B72B41920CBE72F0000F704 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41820CBE72F0000F704 /* APIError.swift */; };
 		5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41A20CC16AA0000F704 /* NetworkFire.swift */; };
+		5B72B41F20CDAF310000F704 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B72B41C20CDAF310000F704 /* Quick.framework */; };
+		5B72B42020CDAF310000F704 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B72B41D20CDAF310000F704 /* Nimble.framework */; };
+		5B72B42120CDAF310000F704 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B72B41E20CDAF310000F704 /* OHHTTPStubs.framework */; };
+		5B72B42420CDB8AD0000F704 /* ExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B42320CDB8AD0000F704 /* ExtensionsSpec.swift */; };
+		5B72B42720CDC30F0000F704 /* APICredentialsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */; };
+		5B72B42D20CE66B20000F704 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B42C20CE66B20000F704 /* RequestSpec.swift */; };
+		5B72B43420CE70260000F704 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43320CE70260000F704 /* Constants.swift */; };
+		5B72B43620CE75CF0000F704 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43520CE75CF0000F704 /* NetworkMock.swift */; };
+		5B72B43820CE75FD0000F704 /* SimpleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43720CE75FD0000F704 /* SimpleModel.swift */; };
+		5B72B43B20CE77D50000F704 /* request-array-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B72B43A20CE77D50000F704 /* request-array-simple.json */; };
+		5B72B43E20CE79E40000F704 /* request-object-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B72B43D20CE79E40000F704 /* request-object-simple.json */; };
+		5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458020CEB09700D79BFB /* AccountSpec.swift */; };
+		5B8D458320CEB29800D79BFB /* request-object-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458220CEB29800D79BFB /* request-object-account.json */; };
+		5B8D458520CEB2F500D79BFB /* request-array-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458420CEB2F500D79BFB /* request-array-account.json */; };
+		5B8D458720CEB58E00D79BFB /* request-object-apierror.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458620CEB58E00D79BFB /* request-object-apierror.json */; };
+		5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */; };
+		5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */; };
+		5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +114,7 @@
 		5B3EFA2520C7D5600083F07B /* CoinbasePro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinbasePro.h; sourceTree = "<group>"; };
 		5B3EFA2620C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinbaseProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B3EFA3020C7D5600083F07B /* CoinbaseProTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProTests.swift; sourceTree = "<group>"; };
+		5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProSpec.swift; sourceTree = "<group>"; };
 		5B3EFA3220C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbasePro.swift; sourceTree = "<group>"; };
 		5B3EFA4520C7D6E10083F07B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -115,12 +133,30 @@
 		5B3EFA6F20C7E0370083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3EFA7F20C7E1E10083F07B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProError.swift; sourceTree = "<group>"; };
-		5B3EFA8320C7F90C0083F07B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		5B3EFA8320C7F90C0083F07B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		5B3EFA8920C813460083F07B /* CBPAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPAccounts.swift; sourceTree = "<group>"; };
 		5B72B41220CB24C80000F704 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = SOURCE_ROOT; };
 		5B72B41620CBC8FF0000F704 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5B72B41820CBE72F0000F704 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5B72B41A20CC16AA0000F704 /* NetworkFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFire.swift; sourceTree = "<group>"; };
+		5B72B41C20CDAF310000F704 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		5B72B41D20CDAF310000F704 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		5B72B41E20CDAF310000F704 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
+		5B72B42320CDB8AD0000F704 /* ExtensionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsSpec.swift; sourceTree = "<group>"; };
+		5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentialsSpec.swift; sourceTree = "<group>"; };
+		5B72B42C20CE66B20000F704 /* RequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSpec.swift; sourceTree = "<group>"; };
+		5B72B43320CE70260000F704 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5B72B43520CE75CF0000F704 /* NetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
+		5B72B43720CE75FD0000F704 /* SimpleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleModel.swift; sourceTree = "<group>"; };
+		5B72B43A20CE77D50000F704 /* request-array-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-array-simple.json"; sourceTree = "<group>"; };
+		5B72B43D20CE79E40000F704 /* request-object-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-simple.json"; path = "JSONData/request-object-simple.json"; sourceTree = "<group>"; };
+		5B8D458020CEB09700D79BFB /* AccountSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
+		5B8D458220CEB29800D79BFB /* request-object-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-account.json"; path = "JSONData/request-object-account.json"; sourceTree = "<group>"; };
+		5B8D458420CEB2F500D79BFB /* request-array-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-array-account.json"; sourceTree = "<group>"; };
+		5B8D458620CEB58E00D79BFB /* request-object-apierror.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-apierror.json"; path = "JSONData/request-object-apierror.json"; sourceTree = "<group>"; };
+		5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorSpec.swift; sourceTree = "<group>"; };
+		5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPAccountsSpec.swift; sourceTree = "<group>"; };
+		5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFireSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +172,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B72B41F20CDAF310000F704 /* Quick.framework in Frameworks */,
+				5B72B42020CDAF310000F704 /* Nimble.framework in Frameworks */,
+				5B72B42120CDAF310000F704 /* OHHTTPStubs.framework in Frameworks */,
 				5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,8 +240,15 @@
 		5B3EFA2F20C7D5600083F07B /* CoinbaseProTests */ = {
 			isa = PBXGroup;
 			children = (
-				5B3EFA3020C7D5600083F07B /* CoinbaseProTests.swift */,
+				5B72B43C20CE77D90000F704 /* JSONData */,
 				5B3EFA3220C7D5600083F07B /* Info.plist */,
+				5B72B43320CE70260000F704 /* Constants.swift */,
+				5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */,
+				5B8D458C20CEB7B700D79BFB /* API */,
+				5B72B42A20CE63330000F704 /* Models */,
+				5B72B42B20CE634E0000F704 /* Extensions */,
+				5B72B42E20CE66CE0000F704 /* Network */,
+				5B72B43920CE76010000F704 /*  Models */,
 			);
 			path = CoinbaseProTests;
 			sourceTree = "<group>";
@@ -210,6 +256,7 @@
 		5B3EFA4A20C7D7B70083F07B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
 				5B3EFA7F20C7E1E10083F07B /* Account.swift */,
 				5B72B41820CBE72F0000F704 /* APIError.swift */,
 			);
@@ -219,6 +266,9 @@
 		5B3EFA4D20C7DC400083F07B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B72B41D20CDAF310000F704 /* Nimble.framework */,
+				5B72B41E20CDAF310000F704 /* OHHTTPStubs.framework */,
+				5B72B41C20CDAF310000F704 /* Quick.framework */,
 				5B3EFA5020C7DEA70083F07B /* Alamofire.framework */,
 				5B3EFA4E20C7DC400083F07B /* Siesta.framework */,
 			);
@@ -251,8 +301,7 @@
 		5B3EFA8720C7FA1B0083F07B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
-				5B3EFA8320C7F90C0083F07B /* Network.swift */,
+				5B3EFA8320C7F90C0083F07B /* Request.swift */,
 				5B72B41A20CC16AA0000F704 /* NetworkFire.swift */,
 			);
 			name = Networking;
@@ -288,6 +337,62 @@
 				5B72B41620CBC8FF0000F704 /* Logger.swift */,
 			);
 			name = Logging;
+			sourceTree = "<group>";
+		};
+		5B72B42A20CE63330000F704 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */,
+				5B8D458020CEB09700D79BFB /* AccountSpec.swift */,
+				5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5B72B42B20CE634E0000F704 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B42320CDB8AD0000F704 /* ExtensionsSpec.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		5B72B42E20CE66CE0000F704 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B43520CE75CF0000F704 /* NetworkMock.swift */,
+				5B72B42C20CE66B20000F704 /* RequestSpec.swift */,
+				5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		5B72B43920CE76010000F704 /*  Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B72B43720CE75FD0000F704 /* SimpleModel.swift */,
+			);
+			name = " Models";
+			sourceTree = "<group>";
+		};
+		5B72B43C20CE77D90000F704 /* JSONData */ = {
+			isa = PBXGroup;
+			children = (
+				5B8D458420CEB2F500D79BFB /* request-array-account.json */,
+				5B72B43A20CE77D50000F704 /* request-array-simple.json */,
+				5B8D458220CEB29800D79BFB /* request-object-account.json */,
+				5B8D458620CEB58E00D79BFB /* request-object-apierror.json */,
+				5B72B43D20CE79E40000F704 /* request-object-simple.json */,
+			);
+			name = JSONData;
+			sourceTree = "<group>";
+		};
+		5B8D458C20CEB7B700D79BFB /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +436,7 @@
 				5B3EFA2720C7D5600083F07B /* Sources */,
 				5B3EFA2820C7D5600083F07B /* Frameworks */,
 				5B3EFA2920C7D5600083F07B /* Resources */,
+				5B72B42220CDB6C80000F704 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -444,6 +550,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B72B43E20CE79E40000F704 /* request-object-simple.json in Resources */,
+				5B8D458520CEB2F500D79BFB /* request-array-account.json in Resources */,
+				5B8D458320CEB29800D79BFB /* request-object-account.json in Resources */,
+				5B72B43B20CE77D50000F704 /* request-array-simple.json in Resources */,
+				5B8D458720CEB58E00D79BFB /* request-object-apierror.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +635,28 @@
 			shellPath = /bin/sh;
 			shellScript = "CONFIG_PLIST=\"${SRCROOT}/Config.plist\"\nif [ -f $AUTH0_PLIST ];\nthen\ncp \"$CONFIG_PLIST\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nfi";
 		};
+		5B72B42220CDB6C80000F704 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OHHTTPStubs.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Quick.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nimble.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/OHHTTPStubs.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -534,7 +667,7 @@
 				5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */,
 				5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */,
 				5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */,
-				5B3EFA8420C7F90C0083F07B /* Network.swift in Sources */,
+				5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */,
 				5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */,
 				5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */,
 				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
@@ -548,7 +681,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3EFA3120C7D5600083F07B /* CoinbaseProTests.swift in Sources */,
+				5B72B43820CE75FD0000F704 /* SimpleModel.swift in Sources */,
+				5B72B42420CDB8AD0000F704 /* ExtensionsSpec.swift in Sources */,
+				5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */,
+				5B72B42D20CE66B20000F704 /* RequestSpec.swift in Sources */,
+				5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */,
+				5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */,
+				5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */,
+				5B72B42720CDC30F0000F704 /* APICredentialsSpec.swift in Sources */,
+				5B72B43420CE70260000F704 /* Constants.swift in Sources */,
+				5B72B43620CE75CF0000F704 /* NetworkMock.swift in Sources */,
+				5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,6 +945,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinbaseProTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -820,6 +967,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinbaseProTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,7 +14,7 @@ struct APICredentials {
     let phrase: String
     let baseURL: URL
 
-    init(key: String, secret: String, phrase: String, baseURL: String?) {
+    init(key: String, secret: String, phrase: String, baseURL: String? = nil) {
         self.key = key
         self.secret = secret
         self.phrase = phrase

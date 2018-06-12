@@ -12,16 +12,17 @@ import Foundation
 /// See [Account Fields](https://docs.gdax.com/#list-accounts)
 public struct Account {
 
-    /// funds available to withdraw or trade
+    /// Funds available to withdraw or trade
     public let available: String
-    /// total funds in the account
+    /// Total funds in the account
     public let balance: String
-    /// the currency of the account
+    /// The currency of the account
     public let currency: String
-    /// funds on hold (not available for use)
+    /// Funds on hold (not available for use)
     public let hold: String
     /// Account ID
     public let id: String
+    /// Profile ID
     public let profileId: String
 
     init(available: String, balance: String, currency: String, hold: String, id: String, profileId: String) {

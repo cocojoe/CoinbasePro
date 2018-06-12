@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  Request.swift
 //  CoinbasePro
 //
 //  Created by Martin on 06/06/2018.
@@ -14,17 +14,17 @@ public protocol Networkable {
     func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void)
 }
 
-struct Network: Loggable {
+struct Request: Loggable {
 
-    private let credentials: APICredentials
-    private let network: Networkable
+    let credentials: APICredentials
+    let network: Networkable
 
     init(withAPIKey key: String, secret: String, phrase: String, baseURL: String? = nil, network: Networkable? = nil) {
         self.credentials = APICredentials(key: key, secret: secret, phrase: phrase, baseURL: baseURL)
         self.network = network ?? NetworkFire()
     }
 
-    func requestArray<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, [T]?) -> Void) where T: Decodable {
+    func array<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, [T]?) -> Void) where T: Decodable {
         let signedHeader = credentials.signedHeader(method: method, requestPath: path)
         let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
         self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
@@ -32,16 +32,16 @@ struct Network: Loggable {
                 return callback(error, nil)
             }
             do {
-                let result = try JSONDecoder().decode(Array<T>.self, from: jsonData)
+                let result = try JSONDecoder().decode([T].self, from: jsonData)
                 return callback(nil, result)
             } catch let parseError {
                 self.logger.error("JSON parsing failed: \(parseError)")
-                return callback(.dataError, nil)
+                return callback(.decodeError, nil)
             }
         }
     }
 
-    func request<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, T?) -> Void) where T: Decodable {
+    func object<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, T?) -> Void) where T: Decodable {
         let signedHeader = credentials.signedHeader(method: method, requestPath: path)
         let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
         self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
@@ -53,7 +53,7 @@ struct Network: Loggable {
                 return callback(nil, result)
             } catch let parseError {
                 self.logger.error("JSON parsing failed: \(parseError)")
-                return callback(.dataError, nil)
+                return callback(.decodeError, nil)
             }
         }
     }

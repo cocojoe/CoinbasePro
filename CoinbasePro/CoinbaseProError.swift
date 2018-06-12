@@ -15,4 +15,5 @@ import Foundation
 public enum CoinbaseProError: Error {
     case networkError
     case dataError
+    case decodeError
 }
