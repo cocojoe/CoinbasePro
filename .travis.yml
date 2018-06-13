@@ -12,14 +12,13 @@ env:
 
 before_install:
   - bundle install
-  - carthage bootstrap --platform iOS
   - brew outdated carthage || brew upgrade carthage
 
 before_script:
   - carthage bootstrap --no-use-binaries --platform iOS --cache-builds
 
 script:
-  - fastlane test
+  - bundle exec fastlane test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'CoinbasePro'

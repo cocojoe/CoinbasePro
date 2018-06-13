@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5B3EFA2120C7D5600083F07B"
-               BuildableName = "CoinbasePro_iOS.framework"
+               BuildableName = "CoinbasePro.framework"
                BlueprintName = "CoinbasePro.iOS"
                ReferencedContainer = "container:CoinbasePro.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B3EFA2120C7D5600083F07B"
-            BuildableName = "CoinbasePro_iOS.framework"
+            BuildableName = "CoinbasePro.framework"
             BlueprintName = "CoinbasePro.iOS"
             ReferencedContainer = "container:CoinbasePro.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B3EFA2120C7D5600083F07B"
-            BuildableName = "CoinbasePro_iOS.framework"
+            BuildableName = "CoinbasePro.framework"
             BlueprintName = "CoinbasePro.iOS"
             ReferencedContainer = "container:CoinbasePro.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B3EFA2120C7D5600083F07B"
-            BuildableName = "CoinbasePro_iOS.framework"
+            BuildableName = "CoinbasePro.framework"
             BlueprintName = "CoinbasePro.iOS"
             ReferencedContainer = "container:CoinbasePro.xcodeproj">
          </BuildableReference>

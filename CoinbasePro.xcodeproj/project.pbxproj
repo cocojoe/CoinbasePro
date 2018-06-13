@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5B3EFA2C20C7D5600083F07B /* CoinbasePro_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; };
+		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
 		5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */; };
@@ -35,8 +35,8 @@
 		5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */; };
 		5B3EFA6E20C7E0370083F07B /* LittleJohnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */; };
 		5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
-		5B3EFA7820C7E0820083F07B /* CoinbasePro_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; };
-		5B3EFA7920C7E0820083F07B /* CoinbasePro_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
+		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA7F20C7E1E10083F07B /* Account.swift */; };
 		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
 		5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Request.swift */; };
@@ -97,6 +97,13 @@
 			remoteGlobalIDString = 5B3EFA2120C7D5600083F07B;
 			remoteInfo = CoinbasePro;
 		};
+		5BD873E420D147ED00D36D56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B3EFA1920C7D5600083F07B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B3EFA5520C7E0360083F07B;
+			remoteInfo = LittleJohn;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,7 +113,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5B3EFA7920C7E0820083F07B /* CoinbasePro_iOS.framework in Embed Frameworks */,
+				5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,7 +121,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA2520C7D5600083F07B /* CoinbasePro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinbasePro.h; sourceTree = "<group>"; };
 		5B3EFA2620C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinbaseProTests.iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +190,7 @@
 				5B72B41F20CDAF310000F704 /* Quick.framework in Frameworks */,
 				5B72B42020CDAF310000F704 /* Nimble.framework in Frameworks */,
 				5B72B42120CDAF310000F704 /* OHHTTPStubs.framework in Frameworks */,
-				5B3EFA2C20C7D5600083F07B /* CoinbasePro_iOS.framework in Frameworks */,
+				5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3EFA7820C7E0820083F07B /* CoinbasePro_iOS.framework in Frameworks */,
+				5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */,
 				5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +228,7 @@
 		5B3EFA2320C7D5600083F07B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */,
+				5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */,
 				5B3EFA2B20C7D5600083F07B /* CoinbaseProTests.iOS.xctest */,
 				5B3EFA5620C7E0360083F07B /* LittleJohn.app */,
 				5B3EFA6920C7E0370083F07B /* LittleJohnTests.xctest */,
@@ -438,7 +445,7 @@
 			);
 			name = CoinbasePro.iOS;
 			productName = CoinbasePro;
-			productReference = 5B3EFA2220C7D5600083F07B /* CoinbasePro_iOS.framework */;
+			productReference = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5B3EFA2A20C7D5600083F07B /* CoinbaseProTests.iOS */ = {
@@ -454,6 +461,7 @@
 			);
 			dependencies = (
 				5B3EFA2E20C7D5600083F07B /* PBXTargetDependency */,
+				5BD873E520D147ED00D36D56 /* PBXTargetDependency */,
 			);
 			name = CoinbaseProTests.iOS;
 			productName = CoinbaseProTests;
@@ -751,6 +759,11 @@
 			target = 5B3EFA2120C7D5600083F07B /* CoinbasePro.iOS */;
 			targetProxy = 5B3EFA7A20C7E0820083F07B /* PBXContainerItemProxy */;
 		};
+		5BD873E520D147ED00D36D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B3EFA5520C7E0360083F07B /* LittleJohn */;
+			targetProxy = 5BD873E420D147ED00D36D56 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -898,8 +911,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -916,7 +930,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbasePro;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = CoinbasePro;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -930,8 +945,9 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -948,7 +964,8 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbasePro;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = CoinbasePro;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				SWIFT_VERSION = 4.0;
@@ -960,7 +977,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -973,6 +991,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbaseProTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -982,7 +1001,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -995,6 +1015,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.CoinbaseProTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1021,7 +1042,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1034,6 +1056,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1044,7 +1067,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1057,6 +1081,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1067,7 +1092,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LittleJohnTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1076,6 +1102,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohnTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleJohn.app/LittleJohn";
@@ -1087,7 +1114,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LittleJohnTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1096,6 +1124,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.martinwalsh.LittleJohnTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LittleJohn.app/LittleJohn";
