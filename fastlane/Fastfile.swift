@@ -16,6 +16,6 @@ class Fastfile: LaneFile {
 
 	func testLane() {
 		desc("Description of what the lane does")
-        	runTests(project: "CoinbasePro.xcodeproj", device: "iPhone 8", scheme: "CoinbasePro.iOS", clean: true, outputTypes: "html,junit")
+        	runTests(project: "CoinbasePro.xcodeproj", device: "iPhone 8", scheme: "CoinbasePro.iOS", clean: true, outputTypes: "junit")
 	}
 }
