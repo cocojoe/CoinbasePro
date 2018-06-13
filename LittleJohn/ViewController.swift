@@ -22,9 +22,9 @@ class ViewController: UIViewController {
             let apiPhrase = dict["APIPhrase"],
             let apiBaseURL = dict["APIBaseURL"] {
             self.coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhrase, baseURL: apiBaseURL)
-                self.checkAPI()
+            self.checkAPI()
         } else {
-            fatalError("Config.plist missing, See development section in README")
+            print("Config.plist missing, See README for more information.")
         }
     }
 
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     func checkAPI() {
         // Do any additional setup after loading the view, typically from a nib.
         var accountID: String = ""
-
+        
         self.coinbase?.accounts.getAccounts { error, accounts in
             guard error == nil, let accounts = accounts else {
                 return print(error ?? "No error specified")
