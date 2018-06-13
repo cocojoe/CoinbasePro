@@ -29,7 +29,6 @@
 		5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA4820C7D7B30083F07B /* APICredentials.swift */; };
 		5B3EFA5120C7DEA70083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
 		5B3EFA5920C7E0360083F07B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5820C7E0360083F07B /* AppDelegate.swift */; };
-		5B3EFA5B20C7E0360083F07B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5A20C7E0360083F07B /* ViewController.swift */; };
 		5B3EFA5E20C7E0360083F07B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5C20C7E0360083F07B /* Main.storyboard */; };
 		5B3EFA6020C7E0370083F07B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5F20C7E0370083F07B /* Assets.xcassets */; };
 		5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6120C7E0370083F07B /* LaunchScreen.storyboard */; };
@@ -653,7 +652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "CONFIG_PLIST=\"${SRCROOT}/Config.plist\"\nif [ -f $AUTH0_PLIST ];\nthen\ncp \"$CONFIG_PLIST\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nfi";
+			shellScript = "CONFIG_PLIST=\"${SRCROOT}/Config.plist\"\nif [ -f $CONFIG_PLIST ];\nthen\ncp \"$CONFIG_PLIST\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nfi";
 		};
 		5B72B42220CDB6C80000F704 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -723,7 +722,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3EFA5B20C7E0360083F07B /* ViewController.swift in Sources */,
 				5B3EFA5920C7E0360083F07B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
