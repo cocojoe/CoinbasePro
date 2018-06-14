@@ -35,11 +35,11 @@ class CBPAccountsSpec: QuickSpec {
                 accounts = CBPAccounts(request: request)
             }
 
-            context("multiple accounts") {
+            context("list accounts") {
 
                 it("should yield array of account objects") {
-                    network.setJSONData(fromFile: Constants.JSONAccountArray)
-                    accounts.getAccounts { error, accounts in
+                    network.setJSONData(fromFile: Constants.Accounts.JSONArray)
+                    accounts.list { error, accounts in
                         expect(error).to(beNil())
                         expect(accounts?.first).to(beAnInstanceOf(Account.self))
                     }
@@ -47,18 +47,18 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.getAccounts { error, accounts in
+                    accounts.list { error, accounts in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
                         expect(accounts).to(beNil())
                     }
                 }
             }
 
-            context("single accounts") {
+            context("retrieve account") {
 
                 it("should yield single account object") {
-                    network.setJSONData(fromFile: Constants.JSONAccountObject)
-                    accounts.getAccount(withID: "ID1") { error, account in
+                    network.setJSONData(fromFile: Constants.Accounts.JSONObject)
+                    accounts.retrieve("ID1") { error, account in
                         expect(error).to(beNil())
                         expect(account).to(beAnInstanceOf(Account.self))
                     }
@@ -66,9 +66,47 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.getAccounts { error, accounts in
+                    accounts.retrieve("ID1") { error, account in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
-                        expect(accounts).to(beNil())
+                        expect(account).to(beNil())
+                    }
+                }
+            }
+
+            context("account history") {
+
+                it("should yield account ledger object") {
+                    network.setJSONData(fromFile: Constants.Accounts.JSONHistoryArray)
+                    accounts.history("ID1") { error, history in
+                        expect(error).to(beNil())
+                        expect(history?.first).to(beAnInstanceOf(AccountLedger.self))
+                    }
+                }
+
+                it("should yield bad data error") {
+                    network.setInvalidJSONData()
+                    accounts.history("ID1") { error, history in
+                        expect(error).to(beAnInstanceOf(CoinbaseProError.self))
+                        expect(history).to(beNil())
+                    }
+                }
+            }
+
+            context("account hold") {
+
+                it("should yield accountuhold object") {
+                    network.setJSONData(fromFile: Constants.Accounts.JSONHoldArray)
+                    accounts.holds("ID1") { error, history in
+                        expect(error).to(beNil())
+                        expect(history?.first).to(beAnInstanceOf(AccountHold.self))
+                    }
+                }
+
+                it("should yield bad data error") {
+                    network.setInvalidJSONData()
+                    accounts.holds("ID1") { error, history in
+                        expect(error).to(beAnInstanceOf(CoinbaseProError.self))
+                        expect(history).to(beNil())
                     }
                 }
             }

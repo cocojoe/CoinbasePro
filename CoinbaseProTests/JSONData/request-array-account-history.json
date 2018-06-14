@@ -1,0 +1,23 @@
+ [{
+  "created_at": "2018-06-14T09:44:50.99495Z",
+  "id": 39549434,
+  "amount": "0.0152889400000000",
+  "balance": "0.1681783900000000",
+  "type": "match",
+  "details": {
+  "order_id": "a693b5ce-3021-4b26-92dd-1fa5ec9b1e60",
+  "trade_id": "1833055",
+  "product_id": "BTC-USD"
+  }
+  }, {
+  "created_at": "2018-06-14T09:33:53.746304Z",
+  "id": 39549424,
+  "amount": "0.1528894500000000",
+  "balance": "0.1528894500000000",
+  "type": "match",
+  "details": {
+  "order_id": "2d5cae54-5b8f-459e-a8fa-e7004f098b67",
+  "trade_id": "1833054",
+  "product_id": "BTC-USD"
+  }
+  }]
