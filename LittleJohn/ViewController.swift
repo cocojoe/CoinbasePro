@@ -35,26 +35,64 @@ class ViewController: UIViewController {
 
     func checkAPI() {
         // Do any additional setup after loading the view, typically from a nib.
-        var accountID: String = ""
-        
-        self.coinbase?.accounts.getAccounts { error, accounts in
-            guard error == nil, let accounts = accounts else {
-                return print(error ?? "No error specified")
-            }
-            
-            accounts.forEach { account in
-                print(account)
+        guard let coinbase = self.coinbase else {
+            return print("CoinbasePro Not Available")
+        }
+
+        // List Accounts
+        coinbase.accounts.list { error, accounts in
+            guard error == nil else {
+                return print(error ?? "")
             }
 
-            // Single Account
-            accountID = accounts.first!.id
+            // Check we have some accounts
+            guard let accounts = accounts, !accounts.isEmpty else {
+                return print("No Accounts Available")
+            }
 
-            self.coinbase?.accounts.getAccount(withID: accountID) { error, account in
+            // Debug Output
+            accounts.forEach { print($0) }
+
+            // Select a Single Account
+            let accountID = accounts.first!.id
+
+            // Account Detail
+            coinbase.accounts.retrieve(accountID) { error, account in
                 guard error == nil, let account = account else {
-                    return print(error ?? "Generic Error")
+                    return print(error ?? "")
                 }
                 print(account)
             }
+
+            // Account History
+            coinbase.accounts.history(accountID) { error, history in
+                guard error == nil else {
+                    return print(error ?? "")
+                }
+
+                // Check we have some history
+                guard let history = history, !history.isEmpty else {
+                    return print("No History Available")
+                }
+
+                history.forEach { print($0) }
+            }
+
+            // Account Holds
+            coinbase.accounts.holds(accountID) { error, holds in
+
+                guard error == nil else {
+                    return print(error ?? "")
+                }
+
+                // Check we have some holds
+                guard let holds = holds, !holds.isEmpty else {
+                    return print("No Holds Available")
+                }
+
+                holds.forEach { print($0) }
+            }
+
         }
     }
 

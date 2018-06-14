@@ -16,9 +16,12 @@ struct Constants {
     
     static let JSONSimpleArray = "request-array-simple"
     static let JSONSimpleObject = "request-object-simple"
-
-    static let JSONAccountArray = "request-array-account"
-    static let JSONAccountObject = "request-object-account"
-
     static let JSONAPIErrorObject = "request-object-apierror"
+
+    struct Accounts {
+        static let JSONArray = "request-array-account"
+        static let JSONObject = "request-object-account"
+        static let JSONHistoryArray = "request-array-account-history"
+        static let JSONHoldArray = "request-array-account-hold"
+    }
 }

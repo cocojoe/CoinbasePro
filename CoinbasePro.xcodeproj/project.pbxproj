@@ -52,14 +52,22 @@
 		5B72B43420CE70260000F704 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43320CE70260000F704 /* Constants.swift */; };
 		5B72B43620CE75CF0000F704 /* NetworkMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43520CE75CF0000F704 /* NetworkMock.swift */; };
 		5B72B43820CE75FD0000F704 /* SimpleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B43720CE75FD0000F704 /* SimpleModel.swift */; };
-		5B72B43B20CE77D50000F704 /* request-array-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B72B43A20CE77D50000F704 /* request-array-simple.json */; };
-		5B72B43E20CE79E40000F704 /* request-object-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B72B43D20CE79E40000F704 /* request-object-simple.json */; };
 		5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458020CEB09700D79BFB /* AccountSpec.swift */; };
-		5B8D458320CEB29800D79BFB /* request-object-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458220CEB29800D79BFB /* request-object-account.json */; };
-		5B8D458520CEB2F500D79BFB /* request-array-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458420CEB2F500D79BFB /* request-array-account.json */; };
-		5B8D458720CEB58E00D79BFB /* request-object-apierror.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B8D458620CEB58E00D79BFB /* request-object-apierror.json */; };
 		5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */; };
 		5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */; };
+		5BCE857A20D1BC3900A27E47 /* AccountLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE857920D1BC3900A27E47 /* AccountLedger.swift */; };
+		5BCE857B20D1BEF000A27E47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5A20C7E0360083F07B /* ViewController.swift */; };
+		5BCE857D20D1C2FB00A27E47 /* AccountLedgerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE857C20D1C2FB00A27E47 /* AccountLedgerDetail.swift */; };
+		5BCE858320D2723700A27E47 /* request-object-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE857E20D2723600A27E47 /* request-object-simple.json */; };
+		5BCE858420D2723700A27E47 /* request-array-simple.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE857F20D2723600A27E47 /* request-array-simple.json */; };
+		5BCE858520D2723700A27E47 /* request-array-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858020D2723600A27E47 /* request-array-account.json */; };
+		5BCE858620D2723700A27E47 /* request-object-apierror.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858120D2723700A27E47 /* request-object-apierror.json */; };
+		5BCE858720D2723700A27E47 /* request-object-account.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858220D2723700A27E47 /* request-object-account.json */; };
+		5BCE858920D2725500A27E47 /* request-array-account-history.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858820D2725500A27E47 /* request-array-account-history.json */; };
+		5BCE858B20D2742A00A27E47 /* AccountLedgerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE858A20D2742A00A27E47 /* AccountLedgerSpec.swift */; };
+		5BCE858D20D2798600A27E47 /* AccountHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE858C20D2798600A27E47 /* AccountHold.swift */; };
+		5BCE859220D283C300A27E47 /* AccountHoldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE859020D2838000A27E47 /* AccountHoldSpec.swift */; };
+		5BCE859320D284C700A27E47 /* request-array-account-hold.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858E20D2816000A27E47 /* request-array-account-hold.json */; };
 		5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */; };
 		5BD873AA20CFF80800D36D56 /* BasicLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A920CFF80800D36D56 /* BasicLogger.swift */; };
 		5BD873AC20CFF82800D36D56 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873AB20CFF82800D36D56 /* Loggable.swift */; };
@@ -158,14 +166,21 @@
 		5B72B43320CE70260000F704 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B72B43520CE75CF0000F704 /* NetworkMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMock.swift; sourceTree = "<group>"; };
 		5B72B43720CE75FD0000F704 /* SimpleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleModel.swift; sourceTree = "<group>"; };
-		5B72B43A20CE77D50000F704 /* request-array-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-array-simple.json"; sourceTree = "<group>"; };
-		5B72B43D20CE79E40000F704 /* request-object-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-simple.json"; path = "JSONData/request-object-simple.json"; sourceTree = "<group>"; };
 		5B8D458020CEB09700D79BFB /* AccountSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
-		5B8D458220CEB29800D79BFB /* request-object-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-account.json"; path = "JSONData/request-object-account.json"; sourceTree = "<group>"; };
-		5B8D458420CEB2F500D79BFB /* request-array-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "request-array-account.json"; sourceTree = "<group>"; };
-		5B8D458620CEB58E00D79BFB /* request-object-apierror.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-apierror.json"; path = "JSONData/request-object-apierror.json"; sourceTree = "<group>"; };
 		5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorSpec.swift; sourceTree = "<group>"; };
 		5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPAccountsSpec.swift; sourceTree = "<group>"; };
+		5BCE857920D1BC3900A27E47 /* AccountLedger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedger.swift; sourceTree = "<group>"; };
+		5BCE857C20D1C2FB00A27E47 /* AccountLedgerDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedgerDetail.swift; sourceTree = "<group>"; };
+		5BCE857E20D2723600A27E47 /* request-object-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-simple.json"; path = "JSONData/request-object-simple.json"; sourceTree = "<group>"; };
+		5BCE857F20D2723600A27E47 /* request-array-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-simple.json"; path = "JSONData/request-array-simple.json"; sourceTree = "<group>"; };
+		5BCE858020D2723600A27E47 /* request-array-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-account.json"; path = "JSONData/request-array-account.json"; sourceTree = "<group>"; };
+		5BCE858120D2723700A27E47 /* request-object-apierror.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-apierror.json"; path = "JSONData/request-object-apierror.json"; sourceTree = "<group>"; };
+		5BCE858220D2723700A27E47 /* request-object-account.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-account.json"; path = "JSONData/request-object-account.json"; sourceTree = "<group>"; };
+		5BCE858820D2725500A27E47 /* request-array-account-history.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-account-history.json"; path = "JSONData/request-array-account-history.json"; sourceTree = "<group>"; };
+		5BCE858A20D2742A00A27E47 /* AccountLedgerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedgerSpec.swift; sourceTree = "<group>"; };
+		5BCE858C20D2798600A27E47 /* AccountHold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHold.swift; sourceTree = "<group>"; };
+		5BCE858E20D2816000A27E47 /* request-array-account-hold.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-account-hold.json"; path = "JSONData/request-array-account-hold.json"; sourceTree = "<group>"; };
+		5BCE859020D2838000A27E47 /* AccountHoldSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHoldSpec.swift; sourceTree = "<group>"; };
 		5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFireSpec.swift; sourceTree = "<group>"; };
 		5BD873A920CFF80800D36D56 /* BasicLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicLogger.swift; sourceTree = "<group>"; };
 		5BD873AB20CFF82800D36D56 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
@@ -270,8 +285,8 @@
 		5B3EFA4A20C7D7B70083F07B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BCE857820D1B98900A27E47 /* Accounts */,
 				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
-				5B3EFA7F20C7E1E10083F07B /* Account.swift */,
 				5B72B41820CBE72F0000F704 /* APIError.swift */,
 			);
 			name = Models;
@@ -358,9 +373,9 @@
 		5B72B42A20CE63330000F704 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BCE857720D1B97900A27E47 /* Accounts */,
 				5B72B43720CE75FD0000F704 /* SimpleModel.swift */,
 				5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */,
-				5B8D458020CEB09700D79BFB /* AccountSpec.swift */,
 				5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */,
 			);
 			name = Models;
@@ -387,11 +402,13 @@
 		5B72B43C20CE77D90000F704 /* JSONData */ = {
 			isa = PBXGroup;
 			children = (
-				5B8D458420CEB2F500D79BFB /* request-array-account.json */,
-				5B72B43A20CE77D50000F704 /* request-array-simple.json */,
-				5B8D458220CEB29800D79BFB /* request-object-account.json */,
-				5B8D458620CEB58E00D79BFB /* request-object-apierror.json */,
-				5B72B43D20CE79E40000F704 /* request-object-simple.json */,
+				5BCE858020D2723600A27E47 /* request-array-account.json */,
+				5BCE858820D2725500A27E47 /* request-array-account-history.json */,
+				5BCE858E20D2816000A27E47 /* request-array-account-hold.json */,
+				5BCE857F20D2723600A27E47 /* request-array-simple.json */,
+				5BCE858220D2723700A27E47 /* request-object-account.json */,
+				5BCE858120D2723700A27E47 /* request-object-apierror.json */,
+				5BCE857E20D2723600A27E47 /* request-object-simple.json */,
 			);
 			name = JSONData;
 			sourceTree = "<group>";
@@ -402,6 +419,27 @@
 				5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		5BCE857720D1B97900A27E47 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				5B8D458020CEB09700D79BFB /* AccountSpec.swift */,
+				5BCE858A20D2742A00A27E47 /* AccountLedgerSpec.swift */,
+				5BCE859020D2838000A27E47 /* AccountHoldSpec.swift */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		5BCE857820D1B98900A27E47 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				5B3EFA7F20C7E1E10083F07B /* Account.swift */,
+				5BCE857920D1BC3900A27E47 /* AccountLedger.swift */,
+				5BCE857C20D1C2FB00A27E47 /* AccountLedgerDetail.swift */,
+				5BCE858C20D2798600A27E47 /* AccountHold.swift */,
+			);
+			name = Accounts;
 			sourceTree = "<group>";
 		};
 		5BD873AF20D05C8900D36D56 /* Logging */ = {
@@ -569,11 +607,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B72B43E20CE79E40000F704 /* request-object-simple.json in Resources */,
-				5B8D458520CEB2F500D79BFB /* request-array-account.json in Resources */,
-				5B8D458320CEB29800D79BFB /* request-object-account.json in Resources */,
-				5B72B43B20CE77D50000F704 /* request-array-simple.json in Resources */,
-				5B8D458720CEB58E00D79BFB /* request-object-apierror.json in Resources */,
+				5BCE859320D284C700A27E47 /* request-array-account-hold.json in Resources */,
+				5BCE858520D2723700A27E47 /* request-array-account.json in Resources */,
+				5BCE858320D2723700A27E47 /* request-object-simple.json in Resources */,
+				5BCE858620D2723700A27E47 /* request-object-apierror.json in Resources */,
+				5BCE858420D2723700A27E47 /* request-array-simple.json in Resources */,
+				5BCE858920D2725500A27E47 /* request-array-account-history.json in Resources */,
+				5BCE858720D2723700A27E47 /* request-object-account.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +723,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCE857A20D1BC3900A27E47 /* AccountLedger.swift in Sources */,
 				5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */,
+				5BCE858D20D2798600A27E47 /* AccountHold.swift in Sources */,
 				5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */,
 				5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */,
 				5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */,
@@ -695,6 +737,7 @@
 				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
 				5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */,
 				5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */,
+				5BCE857D20D1C2FB00A27E47 /* AccountLedgerDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -711,10 +754,12 @@
 				5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */,
 				5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */,
 				5B72B42720CDC30F0000F704 /* APICredentialsSpec.swift in Sources */,
+				5BCE859220D283C300A27E47 /* AccountHoldSpec.swift in Sources */,
 				5B72B43420CE70260000F704 /* Constants.swift in Sources */,
 				5BD873B120D05CCC00D36D56 /* MockLogger.swift in Sources */,
 				5B72B43620CE75CF0000F704 /* NetworkMock.swift in Sources */,
 				5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */,
+				5BCE858B20D2742A00A27E47 /* AccountLedgerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCE857B20D1BEF000A27E47 /* ViewController.swift in Sources */,
 				5B3EFA5920C7E0360083F07B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
