@@ -9,7 +9,7 @@ CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrat
 > Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
 > Would be cool to get some feedback through from their Engineers :]
 > 
-> This started as mini side project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework as I couldn't find an awesome Swift one...sAlthough my time is limited on this.
+> This started as mini side project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework as I couldn't find an awesome Swift one... Although my spare time is limited on this.
 
 ## Features
 
@@ -36,13 +36,13 @@ If you are interested in the current state of development, please see the [Proje
 
 #### Carthage
 
-If you are using Carthage, add the following lines to your `Cartfile`:
+If you are using Carthage, add the following to your `Cartfile`:
 
 ```ruby
 github "cocojoe/CoinbasePro" "master"
 ```
 
-Then run `carthage bootstrap --platform iOS`.
+Then run `carthage bootstrap --platform iOS`
 
 > For more information about Carthage usage, check [their official documentation](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos).
 
@@ -63,7 +63,7 @@ Next, initialize the CoinbasePro object:
 ```swift
 let coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhrase, baseURL: apiBaseURL)
 ```
-> If you don't specify the `baseURL` it will automatically be set to the Live GDAX API. I would recommend using the Sandbox.
+> If you don't specify the `baseURL` it will automatically be set to the Live API. I would recommend using the Sandbox API.
 
 Then try retrieving a list of the users trading accounts:
 
@@ -83,12 +83,11 @@ coinbase.accounts.list { error, accounts in
 }
 ```
 
-
 ## Little John
 
-If you have checked out the repo, you will see there is an Application called `Little John`, a little homage to [Robin Hood](https://en.wikipedia.org/wiki/Robin_Hood_(1973_film)) and [Robinhood](https://robinhood.com/) the awesome trading app.
+If you have checked out the repo, you will see there is an Application called `Little John`, a homage to [Robin Hood](https://en.wikipedia.org/wiki/Robin_Hood_(1973_film)) and [Robinhood](https://robinhood.com/) the awesome trading app.
 
-It features basic usage of the existing functionality. By default it will try to read a `Config.plist` from the project root. The format is as follows:
+It features basic usage of the current functionality. By default it will try to read a `Config.plist` from the project's root folder. The format should be as follows:
 
 ```plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -107,7 +106,7 @@ It features basic usage of the existing functionality. By default it will try to
 </plist>
 ```
 
-Would love to expand this into something much nicer. However, the focus is the SDK for now.
+Would love to expand this into something much nicer. However, the focus is on the SDK for now.
 
 ## Contributing
 
@@ -117,14 +116,14 @@ Contributions are always welcome, please feel free to create a PR that is in kee
 
 ### Sponsors / Donations
 
-If you would like to contribute some ETH or BTC that's also cool. Anything over >= 1 BTC. I'll add you to this list of sponsors.
+If you would like to contribute some ETH or BTC that's also cool. Anything over >= 1 BTC and I'll add you to this list of sponsors.
 
 - __BTC:__ 3Lq2BFUitGyfqUGrQYVkKp1mYi1aC3MqPu
 - __ETH:__ 0x289C3FFd889062D525456658Bb3Cd2F4bDD15110
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/cocojoe/CoinbasePro/tags). 
+I use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/cocojoe/CoinbasePro/tags). 
 
 ## Authors
 
