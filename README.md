@@ -6,8 +6,10 @@
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square)
 
 CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrate with the [Coinbase Pro](https://pro.coinbase.com) API. 
-> Disclaimer: This is an *unofficial* SDK, it started as mini side project to build an iOS App for managing my own trades while travelling. However,
-I thought it might be nice to turn it into an Open Source Framework. Although my time is limited on this.
+> Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
+> Would be cool to get some feedback through from their Engineers :]
+> 
+> This started as mini side project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework as I couldn't find an awesome Swift one...sAlthough my time is limited on this.
 
 ## Features
 
@@ -40,7 +42,7 @@ If you are using Carthage, add the following lines to your `Cartfile`:
 github "cocojoe/CoinbasePro" "master"
 ```
 
-Then run `carthage bootstrap`.
+Then run `carthage bootstrap --platform iOS`.
 
 > For more information about Carthage usage, check [their official documentation](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos).
 
@@ -50,14 +52,20 @@ Then run `carthage bootstrap`.
 
 ## Getting started
 
-You should initialize the CoinbasePro object:
+First import the CoinbasePro Framework:
+
+```swift
+import CoinbasePro
+```
+
+Next, initialize the CoinbasePro object:
 
 ```swift
 let coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhrase, baseURL: apiBaseURL)
 ```
 > If you don't specify the `baseURL` it will automatically be set to the Live GDAX API. I would recommend using the Sandbox.
 
-Next, try retrieving a list of all your trading accounts:
+Then try retrieving a list of the users trading accounts:
 
 ```swift
 coinbase.accounts.list { error, accounts in
