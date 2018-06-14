@@ -5,7 +5,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square)
 
-CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrate with the [Coinbase Pro](https://pro.coinbase.com) API. 
+CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrate with the [Coinbase Pro](https://pro.coinbase.com) Trading Platform API. 
 > Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
 > Would be cool to get some feedback through from their Engineers :]
 > 
