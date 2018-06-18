@@ -11,7 +11,8 @@ import Foundation
 /// Networkable
 /// Adpot this protocol if you want to create your own network object for handling API requests
 public protocol Networkable {
-    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?) -> Void)
+    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?, [String: String]?) -> Void)
+    func pagination(_ headers: [AnyHashable: Any]) -> [String: String]?
 }
 
 struct Request: Loggable {
@@ -25,9 +26,9 @@ struct Request: Loggable {
     }
 
     func array<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, [T]?) -> Void) where T: Decodable {
-        let signedHeader = credentials.signedHeader(method: method, requestPath: path)
+        let signedHeader = credentials.signedHeader(method: method, requestPath: path, parameters: parameters)
         let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
-        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
+        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData, _ in
             guard error == nil, let jsonData = jsonData else {
                 return callback(error, nil)
             }
@@ -43,9 +44,9 @@ struct Request: Loggable {
     }
 
     func object<T>(model: T.Type, method: String, path: String, parameters: [String: String] = [:], callback: @escaping (CoinbaseProError?, T?) -> Void) where T: Decodable {
-        let signedHeader = credentials.signedHeader(method: method, requestPath: path)
+        let signedHeader = credentials.signedHeader(method: method, requestPath: path, parameters: parameters)
         let requestURL = URL(string: path, relativeTo: credentials.baseURL)!
-        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData in
+        self.network.makeRequest(method: method, requestURL: requestURL, parameters: parameters, headers: signedHeader) { error, jsonData, _ in
             guard error == nil, let jsonData = jsonData else {
                 return callback(error, nil)
             }

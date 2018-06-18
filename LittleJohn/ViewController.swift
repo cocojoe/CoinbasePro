@@ -35,12 +35,12 @@ class ViewController: UIViewController {
 
     func checkAPI() {
         // Do any additional setup after loading the view, typically from a nib.
-        guard let coinbase = self.coinbase else {
+        guard var cbAccounts = self.coinbase?.accounts else {
             return print("CoinbasePro Not Available")
         }
 
         // List Accounts
-        coinbase.accounts.list { error, accounts in
+        cbAccounts.list { error, accounts in
             guard error == nil else {
                 return print(error ?? "")
             }
@@ -51,21 +51,23 @@ class ViewController: UIViewController {
             }
 
             // Debug Output
-            accounts.forEach { print($0) }
+            //accounts.forEach { print($0) }
 
             // Select a Single Account
             let accountID = accounts.first!.id
 
             // Account Detail
-            coinbase.accounts.retrieve(accountID) { error, account in
+            cbAccounts.retrieve(accountID) { error, account in
                 guard error == nil, let account = account else {
                     return print(error ?? "")
                 }
-                print(account)
+                //print(account)
             }
 
             // Account History
-            coinbase.accounts.history(accountID) { error, history in
+            cbAccounts
+                .limit(2)
+                .history(accountID) { error, history in
                 guard error == nil else {
                     return print(error ?? "")
                 }
@@ -75,11 +77,13 @@ class ViewController: UIViewController {
                     return print("No History Available")
                 }
 
+                print("Total History: \(history.count)")
+
                 history.forEach { print($0) }
             }
 
             // Account Holds
-            coinbase.accounts.holds(accountID) { error, holds in
+            cbAccounts.holds(accountID) { error, holds in
 
                 guard error == nil else {
                     return print(error ?? "")
@@ -90,7 +94,7 @@ class ViewController: UIViewController {
                     return print("No Holds Available")
                 }
 
-                holds.forEach { print($0) }
+                //holds.forEach { print($0) }
             }
 
         }

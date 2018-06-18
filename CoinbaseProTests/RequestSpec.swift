@@ -70,6 +70,10 @@ class RequestSpec: QuickSpec {
                         expect($1).to(beNil())
                     }
                 }
+
+                context("pagination") {
+                    
+                }
             }
 
             context("object decoding") {
