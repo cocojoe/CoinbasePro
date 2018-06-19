@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5B319AFD20D8F21B004804BD /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B319AFC20D8F21B004804BD /* Pagination.swift */; };
 		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
 		5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +36,7 @@
 		5B3EFA6E20C7E0370083F07B /* LittleJohnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA6D20C7E0370083F07B /* LittleJohnTests.swift */; };
 		5B3EFA7720C7E0520083F07B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA5020C7DEA70083F07B /* Alamofire.framework */; };
 		5B3EFA7820C7E0820083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
-		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5B3EFA7920C7E0820083F07B /* CoinbasePro.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B3EFA8020C7E1E10083F07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA7F20C7E1E10083F07B /* Account.swift */; };
 		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
 		5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Request.swift */; };
@@ -68,6 +69,8 @@
 		5BCE858D20D2798600A27E47 /* AccountHold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE858C20D2798600A27E47 /* AccountHold.swift */; };
 		5BCE859220D283C300A27E47 /* AccountHoldSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE859020D2838000A27E47 /* AccountHoldSpec.swift */; };
 		5BCE859320D284C700A27E47 /* request-array-account-hold.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BCE858E20D2816000A27E47 /* request-array-account-hold.json */; };
+		5BCE85C820D3115000A27E47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE85C720D3115000A27E47 /* Constants.swift */; };
+		5BCE85CA20D3174800A27E47 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE85C920D3174800A27E47 /* Builder.swift */; };
 		5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */; };
 		5BD873AA20CFF80800D36D56 /* BasicLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873A920CFF80800D36D56 /* BasicLogger.swift */; };
 		5BD873AC20CFF82800D36D56 /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD873AB20CFF82800D36D56 /* Loggable.swift */; };
@@ -128,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B319AFC20D8F21B004804BD /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA2520C7D5600083F07B /* CoinbasePro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinbasePro.h; sourceTree = "<group>"; };
 		5B3EFA2620C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 		5BCE858C20D2798600A27E47 /* AccountHold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHold.swift; sourceTree = "<group>"; };
 		5BCE858E20D2816000A27E47 /* request-array-account-hold.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-account-hold.json"; path = "JSONData/request-array-account-hold.json"; sourceTree = "<group>"; };
 		5BCE859020D2838000A27E47 /* AccountHoldSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHoldSpec.swift; sourceTree = "<group>"; };
+		5BCE85C720D3115000A27E47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = CoinbasePro/Constants.swift; sourceTree = SOURCE_ROOT; };
+		5BCE85C920D3174800A27E47 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		5BD873A720CEC61900D36D56 /* NetworkFireSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFireSpec.swift; sourceTree = "<group>"; };
 		5BD873A920CFF80800D36D56 /* BasicLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicLogger.swift; sourceTree = "<group>"; };
 		5BD873AB20CFF82800D36D56 /* Loggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
@@ -255,6 +261,7 @@
 			children = (
 				5B3EFA2520C7D5600083F07B /* CoinbasePro.h */,
 				5B3EFA2620C7D5600083F07B /* Info.plist */,
+				5BCE85C720D3115000A27E47 /* Constants.swift */,
 				5B3EFA3C20C7D5770083F07B /* CoinbasePro.swift */,
 				5B3EFA8B20C813500083F07B /* Extensions */,
 				5B3EFA8720C7FA1B0083F07B /* Networking */,
@@ -288,6 +295,7 @@
 				5BCE857820D1B98900A27E47 /* Accounts */,
 				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
 				5B72B41820CBE72F0000F704 /* APIError.swift */,
+				5B319AFC20D8F21B004804BD /* Pagination.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -356,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3EFA8920C813460083F07B /* CBPAccounts.swift */,
+				5BCE85C920D3174800A27E47 /* Builder.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -551,7 +560,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Martin;
 				TargetAttributes = {
 					5B3EFA2120C7D5600083F07B = {
@@ -724,9 +733,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCE857A20D1BC3900A27E47 /* AccountLedger.swift in Sources */,
+				5BCE85C820D3115000A27E47 /* Constants.swift in Sources */,
 				5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */,
 				5BCE858D20D2798600A27E47 /* AccountHold.swift in Sources */,
 				5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */,
+				5BCE85CA20D3174800A27E47 /* Builder.swift in Sources */,
 				5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */,
 				5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */,
 				5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */,
@@ -736,6 +747,7 @@
 				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
 				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
 				5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */,
+				5B319AFD20D8F21B004804BD /* Pagination.swift in Sources */,
 				5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */,
 				5BCE857D20D1C2FB00A27E47 /* AccountLedgerDetail.swift in Sources */,
 			);

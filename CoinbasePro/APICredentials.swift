@@ -25,9 +25,17 @@ struct APICredentials {
         }
     }
 
-    func signedHeader(method: String, requestPath: String, body: String? = nil) -> [String: String] {
+    func signedHeader(method: String, requestPath: String, body: String? = nil, parameters: [String: String]) -> [String: String] {
         let timeStamp = String(Int(Date().timeIntervalSince1970))
-        let signature = timeStamp + method + requestPath + (body ?? "")
+        var components = URLComponents(string: requestPath)!
+        if !parameters.isEmpty {
+            let queryItems = parameters.map {
+                return URLQueryItem(name: $0, value: $1)
+            }
+            components.queryItems = queryItems
+        }
+        let request = try? components.asURL()
+        let signature = timeStamp + method + request!.absoluteString + (body ?? "")
         let signatureSigned64 = signature.HMAC256Base64(withKey: self.secret.base64Decode()!)
         let header: [String: String] = ["CB-ACCESS-KEY": self.key,
                                         "CB-ACCESS-SIGN": signatureSigned64,

@@ -51,7 +51,7 @@ class APICredentialsSpec: QuickSpec {
                 let timeStamp = String(Int(Date().timeIntervalSince1970))
                 let signature = timeStamp + "GET" + "/endpoint"
                 let signatureSigned64 = signature.HMAC256Base64(withKey: Constants.APISecret.base64Decode()!)
-                let dict = credentials.signedHeader(method: "GET", requestPath: "/endpoint")
+                let dict = credentials.signedHeader(method: "GET", requestPath: "/endpoint", parameters: [:])
                 expect(dict["CB-ACCESS-KEY"]).to(equal(Constants.APIKey))
                 expect(dict["CB-ACCESS-SIGN"]).to(equal(signatureSigned64))
                 expect(dict["CB-ACCESS-TIMESTAMP"]).to(equal(timeStamp))
@@ -62,7 +62,18 @@ class APICredentialsSpec: QuickSpec {
                 let timeStamp = String(Int(Date().timeIntervalSince1970))
                 let signature = timeStamp + "GET" + "/endpoint" + "the body"
                 let signatureSigned64 = signature.HMAC256Base64(withKey: Constants.APISecret.base64Decode()!)
-                let dict = credentials.signedHeader(method: "GET", requestPath: "/endpoint", body: "the body")
+                let dict = credentials.signedHeader(method: "GET", requestPath: "/endpoint", body: "the body", parameters: [:])
+                expect(dict["CB-ACCESS-KEY"]).to(equal(Constants.APIKey))
+                expect(dict["CB-ACCESS-SIGN"]).to(equal(signatureSigned64))
+                expect(dict["CB-ACCESS-TIMESTAMP"]).to(equal(timeStamp))
+                expect(dict["CB-ACCESS-PASSPHRASE"]).to(equal(Constants.APIPhrase))
+            }
+
+            it("should return valid header dictionary with parameters and body") {
+                let timeStamp = String(Int(Date().timeIntervalSince1970))
+                let signature = timeStamp + "GET" + "/endpoint?param1=value2" + "the body"
+                let signatureSigned64 = signature.HMAC256Base64(withKey: Constants.APISecret.base64Decode()!)
+                let dict = credentials.signedHeader(method: "GET", requestPath: "/endpoint", body: "the body", parameters: ["param1": "value2"])
                 expect(dict["CB-ACCESS-KEY"]).to(equal(Constants.APIKey))
                 expect(dict["CB-ACCESS-SIGN"]).to(equal(signatureSigned64))
                 expect(dict["CB-ACCESS-TIMESTAMP"]).to(equal(timeStamp))

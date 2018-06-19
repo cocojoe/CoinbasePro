@@ -9,10 +9,13 @@
 import Foundation
 
 /// [Accounts API](https://docs.gdax.com/#accounts)
-public struct CBPAccounts {
+public class CBPAccounts: Builder {
 
-    let requestPath = "/accounts"
     let request: Request
+
+    // MARK: Builder
+    let path = "/accounts"
+    var params: [String: String] = [:]
 
     internal init(request: Request) {
         self.request = request
@@ -22,18 +25,18 @@ public struct CBPAccounts {
     ///
     /// - Parameter callback: Closure that yields account information or error.
     /// - SeeAlso: [Accounts API](https://docs.gdax.com/#accounts)
-    public func list(callback: @escaping (CoinbaseProError?, [Account]?) -> Void) {
-        self.request.array(model: Account.self, method: "GET", path: self.requestPath, callback: callback)
+    public func list(callback: @escaping (CoinbaseProError?, (account: [Account]?, pagination: Pagination?)) -> Void) {
+        self.request.array(model: Account.self, method: "GET", path: self.path, parameters: self.params, callback: callback)
     }
 
     /// Information for a single account. Use this endpoint when you know the account_id.
     ///
     /// - Parameters:
-    ///   - accountu: Account ID
+    ///   - account: Account ID
     ///   - callback: Closure that yields account information or error.
     public func retrieve(_ account: String, callback: @escaping (CoinbaseProError?, Account?) -> Void) {
-        let requestPath = self.requestPath + "/" + account
-        self.request.object(model: Account.self, method: "GET", path: requestPath, callback: callback)
+        let requestPath = self.path + "/" + account
+        self.request.object(model: Account.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
     }
 
     /// List account activity.
@@ -42,9 +45,9 @@ public struct CBPAccounts {
     /// - Parameters:
     ///   - account: Account ID
     ///   - callback: Closure that yields account history information or error.
-    public func history(_ account: String, callback: @escaping (CoinbaseProError?, [AccountLedger]?) -> Void) {
-        let requestPath = self.requestPath + "/" + account + "/ledger"
-        self.request.array(model: AccountLedger.self, method: "GET", path: requestPath, callback: callback)
+    public func history(_ account: String, callback: @escaping (CoinbaseProError?, (accountLedger: [AccountLedger]?, pagination: Pagination?)) -> Void) {
+        let requestPath = self.path + "/" + account + "/ledger"
+        self.request.array(model: AccountLedger.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
     }
 
     /// List of account holds.
@@ -52,8 +55,26 @@ public struct CBPAccounts {
     /// - Parameters:
     ///   - account: Account ID
     ///   - callback: Closure that yields account history information or error.
-    public func holds(_ account: String, callback: @escaping (CoinbaseProError?, [AccountHold]?) -> Void) {
-        let requestPath = self.requestPath + "/" + account + "/holds"
-        self.request.array(model: AccountHold.self, method: "GET", path: requestPath, callback: callback)
+    public func holds(_ account: String, callback: @escaping (CoinbaseProError?, (accountHold: [AccountHold]?, pagination: Pagination?)) -> Void) {
+        let requestPath = self.path + "/" + account + "/holds"
+        self.request.array(model: AccountHold.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
+    }
+}
+
+extension CBPAccounts: BuilderPagination {
+
+    public func limit(_ limit: Int) -> Self {
+        self.params["limit"] = String(limit)
+        return self
+    }
+
+    public func nextPage(_ next: String) -> Self {
+        self.params["after"] = next
+        return self
+    }
+
+    public func previousPage(_ prev: String) -> Self {
+        self.params["before"] = prev
+        return self
     }
 }

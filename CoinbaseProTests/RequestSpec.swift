@@ -41,33 +41,33 @@ class RequestSpec: QuickSpec {
 
                 it("should decode a JSON array and yield a model array instance") {
                     requestMock.setJSONData(fromFile: Constants.JSONSimpleArray)
-                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") {
-                        expect($0).to(beNil())
-                        expect($1).to(beAnInstanceOf(Array<SimpleModel>.self))
+                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
+                        expect(error).to(beNil())
+                        expect(result.0).to(beAnInstanceOf(Array<SimpleModel>.self))
                     }
                 }
 
                 it("should yield decode error when using bad json data") {
                     requestMock.setInvalidJSONData()
-                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") {
-                        expect($0).to(equal(CoinbaseProError.decodeError))
-                        expect($1).to(beNil())
+                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
+                        expect(error).to(equal(CoinbaseProError.decodeError))
+                        expect(result.0).to(beNil())
                     }
                 }
 
                 it("should yield network error when request failed") {
                     requestMock.setNetworkFailed()
-                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") {
-                        expect($0).to(equal(CoinbaseProError.networkError))
-                        expect($1).to(beNil())
+                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
+                        expect(error).to(equal(CoinbaseProError.networkError))
+                        expect(result.0).to(beNil())
                     }
                 }
 
                 it("should yield data error when data missing") {
                     requestMock.setMissingData()
-                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") {
-                        expect($0).to(equal(CoinbaseProError.dataError))
-                        expect($1).to(beNil())
+                    request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
+                        expect(error).to(equal(CoinbaseProError.dataError))
+                        expect(result.0).to(beNil())
                     }
                 }
             }
