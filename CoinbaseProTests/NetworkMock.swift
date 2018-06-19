@@ -13,10 +13,10 @@ class NetworkMock: Networkable {
 
     var error: CoinbaseProError?
     var data: Data?
-    var pagination: [String: String]?
+    var pagination: Pagination?
 
-    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, Data?, [String: String]?) -> Void) {
-        callback(error, data, pagination)
+    func makeRequest(method: String, requestURL: URL, parameters: [String : String], headers: [String : String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
+        callback(error, (data, pagination))
     }
 
     func setJSONData(fromFile fileName: String) {
@@ -39,8 +39,8 @@ class NetworkMock: Networkable {
         self.error = CoinbaseProError.dataError
     }
 
-    func pagination(_ headers: [AnyHashable : Any]) -> [String : String]? {
-        return nil
+    func pagination(_ headers: [AnyHashable : Any]) -> Pagination? {
+        return pagination
     }
 }
 

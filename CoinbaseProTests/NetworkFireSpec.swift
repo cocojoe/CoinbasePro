@@ -42,9 +42,9 @@ class NetworkFireSpec: QuickSpec {
             it("should yield success on 200 with valid JSON") {
                 let requestURL = URL(string: "/simple", relativeTo: BaseURL)!
                 waitUntil(timeout: Constants.Timeout) { done in
-                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, data, _ in
+                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, result in
                         expect(error).to(beNil())
-                        expect(data).to(beAnInstanceOf(Data.self))
+                        expect(result.0).to(beAnInstanceOf(Data.self))
                         done()
                     }
                 }
@@ -53,9 +53,9 @@ class NetworkFireSpec: QuickSpec {
             it("should fail and return networkError on 400 with JSON Error Data)") {
                 let requestURL = URL(string: "/simple/fail-with-error", relativeTo: BaseURL)!
                 waitUntil(timeout: Constants.Timeout) { done in
-                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, data, _ in
+                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, result in
                         expect(error).to(equal(CoinbaseProError.networkError))
-                        expect(data).to(beNil())
+                        expect(result.0).to(beNil())
                         done()
                     }
                 }
@@ -64,9 +64,9 @@ class NetworkFireSpec: QuickSpec {
             it("should fail and return networkError on 400") {
                 let requestURL = URL(string: "/simple/fail", relativeTo: BaseURL)!
                 waitUntil(timeout: Constants.Timeout) { done in
-                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, data, _ in
+                    network.makeRequest(method: "GET", requestURL: requestURL, parameters: [:], headers: [:]) { error, result in
                         expect(error).to(equal(CoinbaseProError.networkError))
-                        expect(data).to(beNil())
+                        expect(result.0).to(beNil())
                         done()
                     }
                 }

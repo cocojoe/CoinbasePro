@@ -13,9 +13,8 @@ protocol Builder {
     var params: [String: String] { get set }
 }
 
-extension Builder {
-    public mutating func limit(_ limit: Int) -> Self {
-        self.params["limit"] = String(limit)
-        return self
-    }
+public protocol BuilderPagination {
+    func limit(_ limit: Int) -> Self
+    func nextPage(_ next: String) -> Self
+    func previousPage(_ prev: String) -> Self
 }

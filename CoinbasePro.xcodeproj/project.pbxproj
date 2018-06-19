@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5B319AFD20D8F21B004804BD /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B319AFC20D8F21B004804BD /* Pagination.swift */; };
 		5B3EFA2C20C7D5600083F07B /* CoinbasePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */; };
 		5B3EFA3120C7D5600083F07B /* CoinbaseProSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA3020C7D5600083F07B /* CoinbaseProSpec.swift */; };
 		5B3EFA3320C7D5600083F07B /* CoinbasePro.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3EFA2520C7D5600083F07B /* CoinbasePro.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -130,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B319AFC20D8F21B004804BD /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		5B3EFA2220C7D5600083F07B /* CoinbasePro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoinbasePro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3EFA2520C7D5600083F07B /* CoinbasePro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinbasePro.h; sourceTree = "<group>"; };
 		5B3EFA2620C7D5600083F07B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				5BCE857820D1B98900A27E47 /* Accounts */,
 				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
 				5B72B41820CBE72F0000F704 /* APIError.swift */,
+				5B319AFC20D8F21B004804BD /* Pagination.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
 				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
 				5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */,
+				5B319AFD20D8F21B004804BD /* Pagination.swift in Sources */,
 				5B3EFA4620C7D6E10083F07B /* Extensions.swift in Sources */,
 				5BCE857D20D1C2FB00A27E47 /* AccountLedgerDetail.swift in Sources */,
 			);

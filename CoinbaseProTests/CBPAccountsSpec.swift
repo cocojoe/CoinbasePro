@@ -39,17 +39,17 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield array of account objects") {
                     network.setJSONData(fromFile: Constants.Accounts.JSONArray)
-                    accounts.list { error, accounts in
+                    accounts.list { error, result in
                         expect(error).to(beNil())
-                        expect(accounts?.first).to(beAnInstanceOf(Account.self))
+                        expect(result.account).to(beAnInstanceOf(Array<Account>.self))
                     }
                 }
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.list { error, accounts in
+                    accounts.list { error, result in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
-                        expect(accounts).to(beNil())
+                        expect(result.account).to(beNil())
                     }
                 }
             }
@@ -58,17 +58,17 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield single account object") {
                     network.setJSONData(fromFile: Constants.Accounts.JSONObject)
-                    accounts.retrieve("ID1") { error, account in
+                    accounts.retrieve("ID1") { error, result in
                         expect(error).to(beNil())
-                        expect(account).to(beAnInstanceOf(Account.self))
+                        expect(result).to(beAnInstanceOf(Account.self))
                     }
                 }
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.retrieve("ID1") { error, account in
+                    accounts.retrieve("ID1") { error, result in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
-                        expect(account).to(beNil())
+                        expect(result).to(beNil())
                     }
                 }
             }
@@ -77,17 +77,17 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield account ledger object") {
                     network.setJSONData(fromFile: Constants.Accounts.JSONHistoryArray)
-                    accounts.history("ID1") { error, history in
+                    accounts.history("ID1") { error, result in
                         expect(error).to(beNil())
-                        expect(history?.first).to(beAnInstanceOf(AccountLedger.self))
+                        expect(result.accountLedger).to(beAnInstanceOf(Array<AccountLedger>.self))
                     }
                 }
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.history("ID1") { error, history in
+                    accounts.history("ID1") { error, result in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
-                        expect(history).to(beNil())
+                        expect(result.accountLedger).to(beNil())
                     }
                 }
             }
@@ -96,21 +96,37 @@ class CBPAccountsSpec: QuickSpec {
 
                 it("should yield accountuhold object") {
                     network.setJSONData(fromFile: Constants.Accounts.JSONHoldArray)
-                    accounts.holds("ID1") { error, history in
+                    accounts.holds("ID1") { error, result in
                         expect(error).to(beNil())
-                        expect(history?.first).to(beAnInstanceOf(AccountHold.self))
+                        expect(result.accountHold).to(beAnInstanceOf(Array<AccountHold>.self))
                     }
                 }
 
                 it("should yield bad data error") {
                     network.setInvalidJSONData()
-                    accounts.holds("ID1") { error, history in
+                    accounts.holds("ID1") { error, result in
                         expect(error).to(beAnInstanceOf(CoinbaseProError.self))
-                        expect(history).to(beNil())
+                        expect(result.accountHold).to(beNil())
                     }
                 }
             }
-        }
 
+            context("pagination") {
+                it("should set limit") {
+                    let account = accounts.limit(5)
+                    expect(account.params["limit"]) == String(5)
+                }
+
+                it("should set before") {
+                    let account = accounts.nextPage("PAGE1")
+                    expect(account.params["after"]) == "PAGE1"
+                }
+
+                it("should set after") {
+                    let account = accounts.previousPage("PAGE2")
+                    expect(account.params["before"]) == "PAGE2"
+                }
+            }
+        }
     }
 }

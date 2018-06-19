@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             let apiPhrase = dict["APIPhrase"],
             let apiBaseURL = dict["APIBaseURL"] {
             self.coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhrase, baseURL: apiBaseURL)
-            self.checkAPI()
+            self.demoAPI()
         } else {
             print("Config.plist missing, See README for more information.")
         }
@@ -33,68 +33,84 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func checkAPI() {
+    private func demoAPI() {
         // Do any additional setup after loading the view, typically from a nib.
-        guard var cbAccounts = self.coinbase?.accounts else {
+        guard let coinbase = self.coinbase else {
             return print("CoinbasePro Not Available")
         }
 
         // List Accounts
-        cbAccounts.list { error, accounts in
+        coinbase
+            .accounts
+            .list { error, result in
             guard error == nil else {
                 return print(error ?? "")
             }
 
-            // Check we have some accounts
-            guard let accounts = accounts, !accounts.isEmpty else {
+            // Check we have accounts
+            guard let accounts = result.account, !accounts.isEmpty else {
                 return print("No Accounts Available")
             }
 
-            // Debug Output
-            //accounts.forEach { print($0) }
+            accounts.forEach { print($0) }
 
-            // Select a Single Account
+            // Pick First Account
             let accountID = accounts.first!.id
 
             // Account Detail
-            cbAccounts.retrieve(accountID) { error, account in
+            coinbase
+                .accounts
+                .retrieve(accountID) { error, account in
                 guard error == nil, let account = account else {
                     return print(error ?? "")
                 }
-                //print(account)
+                print(account)
             }
 
             // Account History
-            cbAccounts
-                .limit(2)
-                .history(accountID) { error, history in
-                guard error == nil else {
-                    return print(error ?? "")
-                }
+            coinbase
+                .accounts
+                .limit(100)
+                .history(accountID) { error, result in
+                    guard error == nil else {
+                        return print(error ?? "")
+                    }
 
-                // Check we have some history
-                guard let history = history, !history.isEmpty else {
-                    return print("No History Available")
-                }
+                    // Check History Available
+                    guard let history = result.accountLedger, !history.isEmpty else {
+                        return print("No History Available")
+                    }
+                    history.forEach { print($0) }
 
-                print("Total History: \(history.count)")
-
-                history.forEach { print($0) }
+                    // Pagination Test
+                    if let pagination = result.pagination, let previous = pagination.previous {
+                        coinbase
+                            .accounts
+                            .limit(5)
+                            .nextPage(previous)
+                            .history(accountID) { error, result in
+                                if let history = result.accountLedger, !history.isEmpty {
+                                    history.forEach { print($0) }
+                                }
+                        }
+                    }
             }
 
             // Account Holds
-            cbAccounts.holds(accountID) { error, holds in
+            coinbase
+                .accounts
+                .holds(accountID) { error, result in
 
                 guard error == nil else {
                     return print(error ?? "")
                 }
 
                 // Check we have some holds
-                guard let holds = holds, !holds.isEmpty else {
+                guard let holds = result.accountHold, !holds.isEmpty else {
                     return print("No Holds Available")
                 }
 
-                //holds.forEach { print($0) }
+                holds.forEach { print($0) }
             }
 
         }
