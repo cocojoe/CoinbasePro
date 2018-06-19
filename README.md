@@ -7,9 +7,10 @@
 
 CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrate with the [Coinbase Pro](https://pro.coinbase.com) Trading Platform API. 
 > Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
-> Would be cool to get some feedback through from their Engineers :]
+> Would be cool to get some feedback from their Engineers though :]
 > 
-> This started as mini side project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework as I couldn't find an awesome Swift one... Although my spare time is limited on this.
+> This started as small project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework, as I couldn't find a good Swift one... 
+> Please note this is a hobby project.
 
 ## Features
 
@@ -68,13 +69,13 @@ let coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhr
 Then try retrieving a list of the users trading accounts:
 
 ```swift
-coinbase.accounts.list { error, accounts in
+coinbase.accounts.list { error, result in
     guard error == nil else {
         return print(error ?? "")
     }
 
-    // Check we accounts to display
-    guard let accounts = accounts, !accounts.isEmpty else {
+    // Check we have a list of accounts 
+    guard let accounts = result.account, !accounts.isEmpty else {
         return print("No Accounts Available")
     }
 
