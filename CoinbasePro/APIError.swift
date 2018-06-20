@@ -2,8 +2,8 @@
 //  APIError.swift
 //  CoinbasePro
 //
-//  Created by Martin on 09/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 09/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 struct APIError {

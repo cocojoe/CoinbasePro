@@ -2,8 +2,8 @@
 //  Logger.swift
 //  CoinbasePro
 //
-//  Created by Martin on 09/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 09/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ class Logger {
 
     private(set) static var sharedInstance = Logger()
 
-    var level: LogLevel = .info
+    var level: LogLevel = .debug
     var output: LoggerType = BasicLogger()
 
     func verbose(_ message: String, filename: String = #file, line: Int = #line) {

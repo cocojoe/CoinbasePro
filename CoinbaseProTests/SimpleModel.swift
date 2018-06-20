@@ -2,8 +2,8 @@
 //  SimpleModel.swift
 //  CoinbaseProTests
 //
-//  Created by Martin on 11/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 11/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation

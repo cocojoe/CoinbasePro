@@ -1,0 +1,16 @@
+ {
+  "id": "270b7d6e-83f6-445b-b963-e853a42b3b11",
+  "price": "200.00000000",
+  "size": "1.00000000",
+  "product_id": "BTC-USD",
+  "side": "buy",
+  "type": "limit",
+  "time_in_force": "GTC",
+  "post_only": true,
+  "created_at": "2018-06-20T19:57:18.460987Z",
+  "fill_fees": "0.0000000000000000",
+  "filled_size": "0.00000000",
+  "executed_value": "0.0000000000000000",
+  "status": "open",
+  "settled": false
+  }

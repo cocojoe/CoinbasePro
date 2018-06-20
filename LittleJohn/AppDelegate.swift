@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  LittleJohn
 //
-//  Created by Martin on 06/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 06/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import UIKit

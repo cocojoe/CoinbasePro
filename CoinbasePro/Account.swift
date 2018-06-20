@@ -2,14 +2,14 @@
 //  Account.swift
 //  CoinbasePro
 //
-//  Created by Martin on 06/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 06/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
 
 /// Data Model for Account Information
-/// See [List Accounts](https://docs.gdax.com/#list-accounts)
+/// See [Accounts](https://docs.gdax.com/#list-accounts)
 public struct Account {
 
     public let available: String

@@ -56,6 +56,12 @@
 		5B8D458120CEB09700D79BFB /* AccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458020CEB09700D79BFB /* AccountSpec.swift */; };
 		5B8D458920CEB5E700D79BFB /* APIErrorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */; };
 		5B8D458B20CEB7AE00D79BFB /* CBPAccountsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */; };
+		5B91A40F20D9B2BA00B69E58 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A40E20D9B2BA00B69E58 /* Order.swift */; };
+		5BB9B72720DAE67E00835693 /* CBPOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9B72620DAE67E00835693 /* CBPOrders.swift */; };
+		5BB9B72920DAF8E300835693 /* request-array-order.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9B72820DAF8E300835693 /* request-array-order.json */; };
+		5BB9B72B20DAFF0F00835693 /* OrderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9B72A20DAFF0F00835693 /* OrderSpec.swift */; };
+		5BB9B72E20DAFF6600835693 /* request-object-order.json in Resources */ = {isa = PBXBuildFile; fileRef = 5BB9B72D20DAFF6600835693 /* request-object-order.json */; };
+		5BB9B73220DB00D300835693 /* CBOOrdersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB9B73120DB00D300835693 /* CBOOrdersSpec.swift */; };
 		5BCE857A20D1BC3900A27E47 /* AccountLedger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE857920D1BC3900A27E47 /* AccountLedger.swift */; };
 		5BCE857B20D1BEF000A27E47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA5A20C7E0360083F07B /* ViewController.swift */; };
 		5BCE857D20D1C2FB00A27E47 /* AccountLedgerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE857C20D1C2FB00A27E47 /* AccountLedgerDetail.swift */; };
@@ -173,6 +179,12 @@
 		5B8D458020CEB09700D79BFB /* AccountSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSpec.swift; sourceTree = "<group>"; };
 		5B8D458820CEB5E700D79BFB /* APIErrorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrorSpec.swift; sourceTree = "<group>"; };
 		5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPAccountsSpec.swift; sourceTree = "<group>"; };
+		5B91A40E20D9B2BA00B69E58 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		5BB9B72620DAE67E00835693 /* CBPOrders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPOrders.swift; sourceTree = "<group>"; };
+		5BB9B72820DAF8E300835693 /* request-array-order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-array-order.json"; path = "JSONData/request-array-order.json"; sourceTree = "<group>"; };
+		5BB9B72A20DAFF0F00835693 /* OrderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderSpec.swift; sourceTree = "<group>"; };
+		5BB9B72D20DAFF6600835693 /* request-object-order.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-order.json"; path = "JSONData/request-object-order.json"; sourceTree = "<group>"; };
+		5BB9B73120DB00D300835693 /* CBOOrdersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBOOrdersSpec.swift; sourceTree = "<group>"; };
 		5BCE857920D1BC3900A27E47 /* AccountLedger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedger.swift; sourceTree = "<group>"; };
 		5BCE857C20D1C2FB00A27E47 /* AccountLedgerDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLedgerDetail.swift; sourceTree = "<group>"; };
 		5BCE857E20D2723600A27E47 /* request-object-simple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "request-object-simple.json"; path = "JSONData/request-object-simple.json"; sourceTree = "<group>"; };
@@ -292,6 +304,7 @@
 		5B3EFA4A20C7D7B70083F07B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5B91A41020D9B2BF00B69E58 /* Orders */,
 				5BCE857820D1B98900A27E47 /* Accounts */,
 				5B3EFA4820C7D7B30083F07B /* APICredentials.swift */,
 				5B72B41820CBE72F0000F704 /* APIError.swift */,
@@ -364,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3EFA8920C813460083F07B /* CBPAccounts.swift */,
+				5BB9B72620DAE67E00835693 /* CBPOrders.swift */,
 				5BCE85C920D3174800A27E47 /* Builder.swift */,
 			);
 			name = API;
@@ -382,6 +396,7 @@
 		5B72B42A20CE63330000F704 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5BB9B72C20DAFF1600835693 /* Orders */,
 				5BCE857720D1B97900A27E47 /* Accounts */,
 				5B72B43720CE75FD0000F704 /* SimpleModel.swift */,
 				5B72B42620CDC30F0000F704 /* APICredentialsSpec.swift */,
@@ -411,11 +426,9 @@
 		5B72B43C20CE77D90000F704 /* JSONData */ = {
 			isa = PBXGroup;
 			children = (
-				5BCE858020D2723600A27E47 /* request-array-account.json */,
-				5BCE858820D2725500A27E47 /* request-array-account-history.json */,
-				5BCE858E20D2816000A27E47 /* request-array-account-hold.json */,
+				5BB9B72F20DAFF8400835693 /* Accounts */,
+				5BB9B73020DAFF8B00835693 /* Orders */,
 				5BCE857F20D2723600A27E47 /* request-array-simple.json */,
-				5BCE858220D2723700A27E47 /* request-object-account.json */,
 				5BCE858120D2723700A27E47 /* request-object-apierror.json */,
 				5BCE857E20D2723600A27E47 /* request-object-simple.json */,
 			);
@@ -426,8 +439,45 @@
 			isa = PBXGroup;
 			children = (
 				5B8D458A20CEB7AE00D79BFB /* CBPAccountsSpec.swift */,
+				5BB9B73120DB00D300835693 /* CBOOrdersSpec.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		5B91A41020D9B2BF00B69E58 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				5B91A40E20D9B2BA00B69E58 /* Order.swift */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		5BB9B72C20DAFF1600835693 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				5BB9B72A20DAFF0F00835693 /* OrderSpec.swift */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		5BB9B72F20DAFF8400835693 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				5BCE858820D2725500A27E47 /* request-array-account-history.json */,
+				5BCE858E20D2816000A27E47 /* request-array-account-hold.json */,
+				5BCE858020D2723600A27E47 /* request-array-account.json */,
+				5BCE858220D2723700A27E47 /* request-object-account.json */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		5BB9B73020DAFF8B00835693 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				5BB9B72820DAF8E300835693 /* request-array-order.json */,
+				5BB9B72D20DAFF6600835693 /* request-object-order.json */,
+			);
+			name = Orders;
 			sourceTree = "<group>";
 		};
 		5BCE857720D1B97900A27E47 /* Accounts */ = {
@@ -617,11 +667,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCE859320D284C700A27E47 /* request-array-account-hold.json in Resources */,
+				5BB9B72E20DAFF6600835693 /* request-object-order.json in Resources */,
 				5BCE858520D2723700A27E47 /* request-array-account.json in Resources */,
 				5BCE858320D2723700A27E47 /* request-object-simple.json in Resources */,
 				5BCE858620D2723700A27E47 /* request-object-apierror.json in Resources */,
 				5BCE858420D2723700A27E47 /* request-array-simple.json in Resources */,
 				5BCE858920D2725500A27E47 /* request-array-account-history.json in Resources */,
+				5BB9B72920DAF8E300835693 /* request-array-order.json in Resources */,
 				5BCE858720D2723700A27E47 /* request-object-account.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -735,6 +787,7 @@
 				5BCE857A20D1BC3900A27E47 /* AccountLedger.swift in Sources */,
 				5BCE85C820D3115000A27E47 /* Constants.swift in Sources */,
 				5B3EFA4920C7D7B30083F07B /* APICredentials.swift in Sources */,
+				5B91A40F20D9B2BA00B69E58 /* Order.swift in Sources */,
 				5BCE858D20D2798600A27E47 /* AccountHold.swift in Sources */,
 				5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */,
 				5BCE85CA20D3174800A27E47 /* Builder.swift in Sources */,
@@ -745,6 +798,7 @@
 				5BD873AC20CFF82800D36D56 /* Loggable.swift in Sources */,
 				5BD873AA20CFF80800D36D56 /* BasicLogger.swift in Sources */,
 				5B3EFA3D20C7D5770083F07B /* CoinbasePro.swift in Sources */,
+				5BB9B72720DAE67E00835693 /* CBPOrders.swift in Sources */,
 				5B72B41920CBE72F0000F704 /* APIError.swift in Sources */,
 				5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */,
 				5B319AFD20D8F21B004804BD /* Pagination.swift in Sources */,
@@ -757,7 +811,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB9B73220DB00D300835693 /* CBOOrdersSpec.swift in Sources */,
 				5B72B43820CE75FD0000F704 /* SimpleModel.swift in Sources */,
+				5BB9B72B20DAFF0F00835693 /* OrderSpec.swift in Sources */,
 				5B72B42420CDB8AD0000F704 /* ExtensionsSpec.swift in Sources */,
 				5BD873AE20D05B7800D36D56 /* LoggerSpec.swift in Sources */,
 				5BD873A820CEC61900D36D56 /* NetworkFireSpec.swift in Sources */,

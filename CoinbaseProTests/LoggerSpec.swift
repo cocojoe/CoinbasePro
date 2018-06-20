@@ -2,8 +2,8 @@
 //  LoggerSpec.swift
 //  CoinbaseProTests
 //
-//  Created by Martin on 12/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 12/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Quick
@@ -20,9 +20,9 @@ class LoggerSpec: QuickSpec {
                 expect(logger.output).to(beAnInstanceOf(BasicLogger.self))
             }
 
-            it("should init with log level .info") {
+            it("should init with log level .debug") {
                 let logger = Logger()
-                expect(logger.level).to(equal(LogLevel.info))
+                expect(logger.level).to(equal(LogLevel.debug))
             }
         }
 

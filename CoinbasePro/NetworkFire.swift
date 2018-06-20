@@ -2,8 +2,8 @@
 //  NetworkFire.swift
 //  CoinbasePro
 //
-//  Created by Martin on 09/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 09/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Alamofire
@@ -11,7 +11,7 @@ import Alamofire
 struct NetworkFire: Loggable, Networkable {
 
     func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
-        self.logger.verbose("request: \(requestURL.absoluteString)")
+        self.logger.debug("request: \(requestURL.absoluteString), parameters: \(parameters)")
         Alamofire.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: headers)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
