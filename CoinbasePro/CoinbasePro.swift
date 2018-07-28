@@ -2,8 +2,8 @@
 //  CoinbasePro.swift
 //  CoinbasePro
 //
-//  Created by Martin on 06/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 06/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
@@ -28,5 +28,10 @@ public struct CoinbasePro: Loggable {
     /// Retrun an instance of CBPAccounts
     public var accounts: CBPAccounts {
         return CBPAccounts(request: self.request)
+    }
+
+    /// Retrun an instance of CBPOrders
+    public var orders: CBPOrders {
+        return CBPOrders(request: self.request)
     }
 }

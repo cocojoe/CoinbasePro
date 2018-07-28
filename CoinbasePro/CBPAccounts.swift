@@ -2,8 +2,8 @@
 //  CBPAccounts.swift
 //  CoinbasePro
 //
-//  Created by Martin on 06/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 06/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
@@ -23,8 +23,7 @@ public class CBPAccounts: Builder {
 
     /// List of trading accounts.
     ///
-    /// - Parameter callback: Closure that yields account information or error.
-    /// - SeeAlso: [Accounts API](https://docs.gdax.com/#accounts)
+    /// - Parameter callback: Closure that yields all trading accounts
     public func list(callback: @escaping (CoinbaseProError?, (account: [Account]?, pagination: Pagination?)) -> Void) {
         self.request.array(model: Account.self, method: "GET", path: self.path, parameters: self.params, callback: callback)
     }
@@ -33,7 +32,7 @@ public class CBPAccounts: Builder {
     ///
     /// - Parameters:
     ///   - account: Account ID
-    ///   - callback: Closure that yields account information or error.
+    ///   - callback: Closure that yields a single account
     public func retrieve(_ account: String, callback: @escaping (CoinbaseProError?, Account?) -> Void) {
         let requestPath = self.path + "/" + account
         self.request.object(model: Account.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
@@ -44,7 +43,7 @@ public class CBPAccounts: Builder {
     ///
     /// - Parameters:
     ///   - account: Account ID
-    ///   - callback: Closure that yields account history information or error.
+    ///   - callback: Closure that yields an accounts history
     public func history(_ account: String, callback: @escaping (CoinbaseProError?, (accountLedger: [AccountLedger]?, pagination: Pagination?)) -> Void) {
         let requestPath = self.path + "/" + account + "/ledger"
         self.request.array(model: AccountLedger.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
@@ -54,7 +53,7 @@ public class CBPAccounts: Builder {
     ///
     /// - Parameters:
     ///   - account: Account ID
-    ///   - callback: Closure that yields account history information or error.
+    ///   - callback: Closure that yields account holds
     public func holds(_ account: String, callback: @escaping (CoinbaseProError?, (accountHold: [AccountHold]?, pagination: Pagination?)) -> Void) {
         let requestPath = self.path + "/" + account + "/holds"
         self.request.array(model: AccountHold.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)

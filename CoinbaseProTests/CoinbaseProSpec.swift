@@ -2,8 +2,8 @@
 //  CoinbaseProTests.swift
 //  CoinbaseProTests
 //
-//  Created by Martin on 06/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 06/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Quick
@@ -28,8 +28,12 @@ class CoinbaseProSpec: QuickSpec {
                 coinbase = CoinbasePro(withAPIKey: Constants.APIKey, secret: Constants.APISecret, phrase: Constants.APIPhrase)
             }
 
-            it("should return instance of Accounts") {
+            it("should return instance of CBPAccounts") {
                 expect(coinbase.accounts).to(beAnInstanceOf(CBPAccounts.self))
+            }
+
+            it("should return instance of CBPOrders") {
+                expect(coinbase.orders).to(beAnInstanceOf(CBPOrders.self))
             }
 
         }

@@ -2,8 +2,8 @@
 //  Constants.swift
 //  CoinbaseProTests
 //
-//  Created by Martin on 11/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 11/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
@@ -23,5 +23,10 @@ struct Constants {
         static let JSONObject = "request-object-account"
         static let JSONHistoryArray = "request-array-account-history"
         static let JSONHoldArray = "request-array-account-hold"
+    }
+
+    struct Orders {
+        static let JSONArray = "request-array-order"
+        static let JSONObject = "request-object-order"
     }
 }

@@ -2,8 +2,8 @@
 //  NetworkMock.swift
 //  CoinbaseProTests
 //
-//  Created by Martin on 11/06/2018.
-//  Copyright © 2018 Martin. All rights reserved.
+//  Created by Martin Walsh on 11/06/2018.
+//  Copyright © 2018 Martin Walsh. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,16 @@ class NetworkMock: Networkable {
     var data: Data?
     var pagination: Pagination?
 
+    var method: String?
+    var requestURL: URL?
+    var parameters: [String: String] = [:]
+    var headers: [String: String] = [:]
+
     func makeRequest(method: String, requestURL: URL, parameters: [String : String], headers: [String : String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
+        self.method = method
+        self.requestURL = requestURL
+        self.headers = headers
+        self.parameters = parameters
         callback(error, (data, pagination))
     }
 
