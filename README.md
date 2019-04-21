@@ -9,7 +9,6 @@ CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrat
 > Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
 > Would be cool to get some feedback from their Engineers though :]
 > 
-> This started as small project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework, as I couldn't find a good Swift one... 
 > Please note this is a hobby project, there are no timeline commitments.
 
 ## Features
