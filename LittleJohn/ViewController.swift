@@ -142,7 +142,7 @@ class ViewController: UIViewController {
 
                 // Check we have accounts
                 guard let orders = result.order, !orders.isEmpty else {
-                    return print("No Accounts Available")
+                    return print("No Orders Open")
                 }
 
                 orders.forEach { print($0) }
