@@ -32,7 +32,7 @@ If you are interested in the current state of development, please see the [Proje
 
 - iOS 10+
 - Xcode 10.x
-- Swift 5.x
+- Swift 4.x/5.x
 
 ### Installing
 
