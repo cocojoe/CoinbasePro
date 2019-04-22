@@ -1,0 +1,6 @@
+scheme "CoinbasePro.iOS"
+devices ["iPhone 8"]
+
+clean true
+
+output_types "html"
