@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if  let path = Bundle.main.path(forResource: "Config", ofType: "plist"),
+        if  let path = Bundle.main.path(forResource: "Credentials", ofType: "plist"),
             let dict = NSDictionary(contentsOfFile: path) as? [String: String],
             let apiKey = dict["APIKey"],
             let apiSecret = dict["APISecret"],
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
             let apiBaseURL = dict["APIBaseURL"] {
             self.coinbase = CoinbasePro(withAPIKey: apiKey, secret: apiSecret, phrase: apiPhrase, baseURL: apiBaseURL)
         } else {
-            print("Config.plist missing, See README for more information.")
+            print("Coinbase Pro API Credentials missing, See README for more information.")
         }
     }
 
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
 
                 // Check we have accounts
                 guard let orders = result.order, !orders.isEmpty else {
-                    return print("No Accounts Available")
+                    return print("No Orders Open")
                 }
 
                 orders.forEach { print($0) }

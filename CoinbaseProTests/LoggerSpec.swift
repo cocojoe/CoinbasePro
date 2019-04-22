@@ -51,25 +51,21 @@ class LoggerSpec: QuickSpec {
 
                 it("should log debug") {
                     logger.debug("debug")
-                    expect(mockLogger.level).to(equal(LogLevel.debug))
                     expect(mockLogger.message).to(equal("debug"))
                 }
 
                 it("should log info") {
                     logger.info("info")
-                    expect(mockLogger.level).to(equal(LogLevel.info))
                     expect(mockLogger.message).to(equal("info"))
                 }
 
                 it("should log warning") {
                     logger.warning("warning")
-                    expect(mockLogger.level).to(equal(LogLevel.warning))
                     expect(mockLogger.message).to(equal("warning"))
                 }
 
                 it("should log error") {
                     logger.error("error")
-                    expect(mockLogger.level).to(equal(LogLevel.error))
                     expect(mockLogger.message).to(equal("error"))
                 }
             }
@@ -82,7 +78,6 @@ class LoggerSpec: QuickSpec {
 
                 it("should not log verbose") {
                     logger.verbose("verbose")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
@@ -94,19 +89,16 @@ class LoggerSpec: QuickSpec {
 
                 it("should log info") {
                     logger.info("info")
-                    expect(mockLogger.level).to(equal(LogLevel.info))
                     expect(mockLogger.message).to(equal("info"))
                 }
 
                 it("should log warning") {
                     logger.warning("warning")
-                    expect(mockLogger.level).to(equal(LogLevel.warning))
                     expect(mockLogger.message).to(equal("warning"))
                 }
 
                 it("should log error") {
                     logger.error("error")
-                    expect(mockLogger.level).to(equal(LogLevel.error))
                     expect(mockLogger.message).to(equal("error"))
                 }
             }
@@ -119,13 +111,11 @@ class LoggerSpec: QuickSpec {
 
                 it("should not log verbose") {
                     logger.verbose("verbose")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log debug") {
                     logger.debug("debug")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
@@ -137,13 +127,11 @@ class LoggerSpec: QuickSpec {
 
                 it("should log warning") {
                     logger.warning("warning")
-                    expect(mockLogger.level).to(equal(LogLevel.warning))
                     expect(mockLogger.message).to(equal("warning"))
                 }
 
                 it("should log error") {
                     logger.error("error")
-                    expect(mockLogger.level).to(equal(LogLevel.error))
                     expect(mockLogger.message).to(equal("error"))
                 }
             }
@@ -156,19 +144,16 @@ class LoggerSpec: QuickSpec {
 
                 it("should not log verbose") {
                     logger.verbose("verbose")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log debug") {
                     logger.debug("debug")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log info") {
                     logger.info("info")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
@@ -180,7 +165,6 @@ class LoggerSpec: QuickSpec {
 
                 it("should log error") {
                     logger.error("error")
-                    expect(mockLogger.level).to(equal(LogLevel.error))
                     expect(mockLogger.message).to(equal("error"))
                 }
             }
@@ -193,25 +177,21 @@ class LoggerSpec: QuickSpec {
 
                 it("should not log verbose") {
                     logger.verbose("verbose")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log debug") {
                     logger.debug("debug")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log info") {
                     logger.info("info")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 
                 it("should not log warning") {
                     logger.warning("warning")
-                    expect(mockLogger.level).to(beNil())
                     expect(mockLogger.message).to(beNil())
                 }
 

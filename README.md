@@ -3,23 +3,23 @@
 [![Build Status](https://travis-ci.org/cocojoe/CoinbasePro.svg?branch=master)](https://travis-ci.org/cocojoe/CoinbasePro)
 [![Code Coverage](https://codecov.io/gh/cocojoe/CoinbasePro/branch/master/graph/badge.svg)](https://codecov.io/gh/cocojoe/CoinbasePro)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Swift 4.1](https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat-square)
 
 CoinbasePro is a modern, lightweight Swift SDK that lets you seamlessly integrate with the [Coinbase Pro](https://pro.coinbase.com) Trading Platform API. 
 > Disclaimer: This is an *unofficial* SDK and not affiliated with Coinbase in anyway. 
 > Would be cool to get some feedback from their Engineers though :]
 > 
-> This started as small project to build an iOS App for managing my own trades while travelling. However, I thought it might be nice to turn it into an Open Source Framework, as I couldn't find a good Swift one... 
-> Please note this is a hobby project.
+> Please note this is a hobby project, there are no timeline commitments.
 
 ## Features
 
+- Good API Documentation
 - Extensive Functional Testing
-- Full Code Coverage
+- Easy to use
+- Awesome Code Coverage
 - Chainable Requests
-- Plugin your own Network Layer
-- Plugin your own Logging Layer
-- Documented Public API
+- (Todo) Plugin your own Network Layer
+- (Todo) Plugin your own Logging Layer
 
 ## Getting Started
 
@@ -30,8 +30,8 @@ If you are interested in the current state of development, please see the [Proje
 ### Prerequisites
 
 - iOS 10+
-- Xcode 9.0
-- Swift 4.1
+- Xcode 10.x
+- Swift 4.x/5.x
 
 ### Installing
 
@@ -49,7 +49,7 @@ Then run `carthage bootstrap --platform iOS`
 
 #### Cocoapods
 
-> On the Todo List
+> Todo, See [Package Manager Card](https://github.com/cocojoe/CoinbasePro/projects/1#card-10441893)
 
 ## Getting started
 
@@ -86,9 +86,13 @@ coinbase.accounts.list { error, result in
 
 ## Little John
 
-If you have checked out the repo, you will see there is an Application called `Little John`, a homage to [Robin Hood](https://en.wikipedia.org/wiki/Robin_Hood_(1973_film)) and [Robinhood](https://robinhood.com/) the awesome trading app.
+If you have checked out the repo, you will see there is an Application called `Little John`, a homage to [Disney's Robin Hood](https://en.wikipedia.org/wiki/Robin_Hood_(1973_film)) and [Robinhood](https://robinhood.com/) the awesome trading app.
 
-It features basic usage of the current functionality. By default it will try to read a `Config.plist` from the project's root folder. The format should be as follows:
+It features basic usage of the current functionality. By default it will try to read a `Credentials.plist` from the project's root folder. 
+> Note: It's super insecure to store credential information in a plist, this is only a convenience for myself testing locally :) Do not use
+this in a Production Environment ever.
+
+The format should be as follows:
 
 ```plist
 <?xml version="1.0" encoding="UTF-8"?>
@@ -106,8 +110,6 @@ It features basic usage of the current functionality. By default it will try to 
 </dict>
 </plist>
 ```
-
-Would love to expand this into something much nicer. However, the focus is on the SDK for now.
 
 ## Contributing
 

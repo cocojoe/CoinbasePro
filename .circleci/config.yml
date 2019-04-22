@@ -1,0 +1,102 @@
+version: 2
+jobs:
+  build-iOS-Swift-5.0:
+    macos:
+      xcode: "10.2.0"
+    environment:
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
+          HOMEBREW_LOGS: ~/homebrew-logs
+          HOMEBREW_TEMP: ~/homebrew-temp
+          HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: |
+          brew install swiftlint
+          bundle install --without=development
+      - run:
+          name: Bootstrap
+          command: bundle exec fastlane ios bootstrap
+      - run:
+          name: Run test suite
+          command: bundle exec fastlane ios ci
+          environment:
+            SCHEME: CoinbasePro.iOS
+            DEVICE: iPhone 8
+            FASTLANE_EXPLICIT_OPEN_SIMULATOR: 2
+      - run: |
+          bash <(curl -s https://codecov.io/bash) -J 'CoinbasePro'
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - Carthage/Build
+      - store_test_results:
+          path: fastlane/test_output
+  build-iOS-Swift-4.2:
+    macos:
+      xcode: "10.2.0"
+    environment:
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
+          HOMEBREW_LOGS: ~/homebrew-logs
+          HOMEBREW_TEMP: ~/homebrew-temp
+          HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: |
+          brew install swiftlint
+          bundle install --without=development
+          sed -i "" 's/SWIFT_VERSION = 5.0/SWIFT_VERSION = 4.2/g' "CoinbasePro.xcodeproj/project.pbxproj"
+      - run:
+          name: Bootstrap
+          command: bundle exec fastlane ios bootstrap
+      - run:
+          name: Run test suite
+          command: bundle exec fastlane ios ci
+          environment:
+            SCHEME: CoinbasePro.iOS
+            DEVICE: iPhone 8
+            FASTLANE_EXPLICIT_OPEN_SIMULATOR: 2
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - Carthage/Build
+      - store_test_results:
+          path: fastlane/test_output
+  build-iOS-Swift-4.0:
+    macos:
+      xcode: "10.2.0"
+    environment:
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
+          HOMEBREW_LOGS: ~/homebrew-logs
+          HOMEBREW_TEMP: ~/homebrew-temp
+          HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: |
+          brew install swiftlint
+          bundle install --without=development
+          sed -i "" 's/SWIFT_VERSION = 5.0/SWIFT_VERSION = 4.0/g' "CoinbasePro.xcodeproj/project.pbxproj"
+      - run:
+          name: Bootstrap
+          command: bundle exec fastlane ios bootstrap
+      - run:
+          name: Run test suite
+          command: bundle exec fastlane ios ci
+          environment:
+            SCHEME: CoinbasePro.iOS
+            DEVICE: iPhone 8
+            FASTLANE_EXPLICIT_OPEN_SIMULATOR: 2
+      - save_cache:
+          key: dependency-cache
+          paths:
+            - Carthage/Build
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      -  build-iOS-Swift-5.0
+      -  build-iOS-Swift-4.2
+      -  build-iOS-Swift-4.0
