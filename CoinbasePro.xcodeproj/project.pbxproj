@@ -27,7 +27,6 @@
 		5B3EFA8220C7F36A0083F07B /* CoinbaseProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */; };
 		5B3EFA8420C7F90C0083F07B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8320C7F90C0083F07B /* Request.swift */; };
 		5B3EFA8A20C813460083F07B /* CBPAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3EFA8920C813460083F07B /* CBPAccounts.swift */; };
-		5B64833B226BE7FD004A3FD5 /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B64833A226BE7FD004A3FD5 /* Credentials.plist */; };
 		5B72B41720CBC8FF0000F704 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41620CBC8FF0000F704 /* Logger.swift */; };
 		5B72B41920CBE72F0000F704 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41820CBE72F0000F704 /* APIError.swift */; };
 		5B72B41B20CC16AA0000F704 /* NetworkFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72B41A20CC16AA0000F704 /* NetworkFire.swift */; };
@@ -143,7 +142,6 @@
 		5B3EFA8120C7F36A0083F07B /* CoinbaseProError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseProError.swift; sourceTree = "<group>"; };
 		5B3EFA8320C7F90C0083F07B /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		5B3EFA8920C813460083F07B /* CBPAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPAccounts.swift; sourceTree = "<group>"; };
-		5B64833A226BE7FD004A3FD5 /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = SOURCE_ROOT; };
 		5B72B41620CBC8FF0000F704 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		5B72B41820CBE72F0000F704 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5B72B41A20CC16AA0000F704 /* NetworkFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFire.swift; sourceTree = "<group>"; };
@@ -308,7 +306,6 @@
 		5B3EFA5720C7E0360083F07B /* LittleJohn */ = {
 			isa = PBXGroup;
 			children = (
-				5B64833A226BE7FD004A3FD5 /* Credentials.plist */,
 				5B3EFA5820C7E0360083F07B /* AppDelegate.swift */,
 				5B3EFA5A20C7E0360083F07B /* ViewController.swift */,
 				5B3EFA5C20C7E0360083F07B /* Main.storyboard */,
@@ -552,6 +549,7 @@
 				5B3EFA5420C7E0360083F07B /* Resources */,
 				5B3EFA7C20C7E0820083F07B /* Embed Frameworks */,
 				5B3EFA7D20C7E08E0083F07B /* Carthage */,
+				5B83D055226E401E0009420E /* Config */,
 				5B72B41120CB242D0000F704 /* Configuration */,
 			);
 			buildRules = (
@@ -658,7 +656,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3EFA6320C7E0370083F07B /* LaunchScreen.storyboard in Resources */,
-				5B64833B226BE7FD004A3FD5 /* Credentials.plist in Resources */,
 				5B3EFA6020C7E0370083F07B /* Assets.xcassets in Resources */,
 				5B3EFA5E20C7E0360083F07B /* Main.storyboard in Resources */,
 			);
@@ -739,6 +736,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		5B83D055226E401E0009420E /* Config */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Config;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COINBASE_PLIST=\"${SRCROOT}/Credentials.plist\"\nif [ -f $COINBASE_PLIST ];\nthen\ncp \"$COINBASE_PLIST\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
