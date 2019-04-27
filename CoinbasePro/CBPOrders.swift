@@ -11,14 +11,8 @@ import Foundation
 /// [Orders API](https://docs.gdax.com/#orders)
 public class CBPOrders: Builder {
 
-    let request: Request
-
-    // MARK: Builder
-    let path = "/orders"
-    var params: [String: String] = [:]
-
     internal init(request: Request) {
-        self.request = request
+        super.init(path: "/orders", request: request)
     }
 
     /// List of orders
@@ -33,22 +27,21 @@ public class CBPOrders: Builder {
         params["product_id"] = productId
         self.request.array(model: Order.self, method: "GET", path: self.path, parameters: params, callback: callback)
     }
-}
 
-extension CBPOrders: BuilderPagination {
-
-    public func limit(_ limit: Int) -> Self {
-        self.params["limit"] = String(limit)
-        return self
-    }
-
-    public func nextPage(_ next: String) -> Self {
-        self.params["after"] = next
-        return self
-    }
-
-    public func previousPage(_ prev: String) -> Self {
-        self.params["before"] = prev
-        return self
+    /// Place an order
+    ///
+    /// - Parameters:
+    ///   - price: Price per BTC
+    ///   - size: Amount of BTC to buy or sell
+    ///   - side: "buy" or "sell"
+    ///   - productId: A valid product id
+    ///   - callback: Closure that yields order placement outcome
+    public func buy(withPrice price: String, size: String, side: String, productId: String, callback: @escaping (CoinbaseProError?, Order?) -> Void) {
+        var params = self.params
+        params["price"] = price
+        params["size"] = size
+        params["side"] = side
+        params["product_id"] = productId
+        self.request.object(model: Order.self, method: "POST", path: self.path, parameters: params, callback: callback)
     }
 }

@@ -19,14 +19,6 @@ public struct Account {
     public let id: String
     public let profileId: String
 
-    init(available: String, balance: String, currency: String, hold: String, id: String, profileId: String) {
-        self.available = available
-        self.balance = balance
-        self.currency = currency
-        self.hold = hold
-        self.id = id
-        self.profileId = profileId
-    }
 }
 
 extension Account: Decodable { }

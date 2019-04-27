@@ -16,7 +16,7 @@ class APIErrorSpec: QuickSpec {
         describe("init") {
 
             it("should return instance of APIError") {
-                let account = APIError(description: "A big error")
+                let account = APIError(message: "A big error")
                 expect(account).to(beAnInstanceOf(APIError.self))
             }
 

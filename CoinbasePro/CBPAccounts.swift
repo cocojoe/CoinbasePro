@@ -11,14 +11,8 @@ import Foundation
 /// [Accounts API](https://docs.gdax.com/#accounts)
 public class CBPAccounts: Builder {
 
-    let request: Request
-
-    // MARK: Builder
-    let path = "/accounts"
-    var params: [String: String] = [:]
-
     internal init(request: Request) {
-        self.request = request
+        super.init(path: "/accounts", request: request)
     }
 
     /// List of trading accounts.
@@ -57,23 +51,5 @@ public class CBPAccounts: Builder {
     public func holds(_ account: String, callback: @escaping (CoinbaseProError?, (accountHold: [AccountHold]?, pagination: Pagination?)) -> Void) {
         let requestPath = self.path + "/" + account + "/holds"
         self.request.array(model: AccountHold.self, method: "GET", path: requestPath, parameters: self.params, callback: callback)
-    }
-}
-
-extension CBPAccounts: BuilderPagination {
-
-    public func limit(_ limit: Int) -> Self {
-        self.params["limit"] = String(limit)
-        return self
-    }
-
-    public func nextPage(_ next: String) -> Self {
-        self.params["after"] = next
-        return self
-    }
-
-    public func previousPage(_ prev: String) -> Self {
-        self.params["before"] = prev
-        return self
     }
 }

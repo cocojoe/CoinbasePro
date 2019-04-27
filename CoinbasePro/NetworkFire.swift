@@ -10,12 +10,29 @@ import Alamofire
 
 struct NetworkFire: Loggable, Networkable {
 
-    func makeRequest(method: String, requestURL: URL, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
-        self.logger.debug("request: \(requestURL.absoluteString), parameters: \(parameters)")
-        Alamofire.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: headers)
+    func makeRequest(method: String, requestURL: URL, body: String? = nil, parameters: [String: String], headers: [String: String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
+        self.logger.debug("request: \(requestURL.absoluteString), method: \(method), parameters: \(parameters), body: \(body ?? "")")
+
+        // Have to create POST due to body value consistency requirement
+        var request: DataRequest
+        if method == "POST", let body = body {
+            var urlRequest = URLRequest(url: requestURL)
+            urlRequest.httpMethod = method
+            urlRequest.httpBody = body.data(using: .utf8)
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            headers.forEach {
+                urlRequest.setValue($0.value, forHTTPHeaderField: $0.key)
+            }
+            request = Alamofire.request(urlRequest)
+        } else {
+            request = Alamofire.request(requestURL, method: HTTPMethod(rawValue: method)!, parameters: parameters, headers: headers)
+        }
+
+        request
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
+                self.logger.debug(response.timeline.description)
                 switch response.result {
                 case .success:
                     var pagination: Pagination?
@@ -28,7 +45,7 @@ struct NetworkFire: Loggable, Networkable {
                         let errorInfo = try? JSONDecoder()
                             .caseDecoder()
                             .decode(APIError.self, from: errorData) {
-                        self.logger.error("Request failed: \(errorInfo.description)")
+                        self.logger.error("Request failed: \(errorInfo.message)")
                         return callback(.networkError, (nil, nil))
                     } else {
                         self.logger.error("Request failed: \(error.localizedDescription)")

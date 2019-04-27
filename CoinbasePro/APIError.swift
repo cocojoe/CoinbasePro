@@ -8,21 +8,7 @@
 
 struct APIError {
 
-    let description: String
-
-    init(description: String) {
-        self.description = description
-    }
+    let message: String
 }
 
-extension APIError: Decodable {
-    enum CodingKeys: String, CodingKey {
-        case description = "message"
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let description: String = try container.decode(String.self, forKey: .description)
-        self.init(description: description)
-    }
-}
+extension APIError: Decodable { }

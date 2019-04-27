@@ -28,7 +28,7 @@ struct APICredentials {
     func signedHeader(method: String, requestPath: String, body: String? = nil, parameters: [String: String]) -> [String: String] {
         let timeStamp = String(Int(Date().timeIntervalSince1970))
         var components = URLComponents(string: requestPath)!
-        if !parameters.isEmpty {
+        if !parameters.isEmpty && method == "GET" {
             let queryItems = parameters.map {
                 return URLQueryItem(name: $0, value: $1)
             }
