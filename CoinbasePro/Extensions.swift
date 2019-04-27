@@ -27,3 +27,11 @@ extension String {
         return data.base64EncodedString()
     }
 }
+
+extension JSONDecoder {
+    func caseDecoder() -> JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+}

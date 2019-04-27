@@ -25,7 +25,9 @@ struct NetworkFire: Loggable, Networkable {
                     return callback(nil, (response.data, pagination))
                 case .failure(let error):
                     if  let errorData = response.data,
-                        let errorInfo = try? JSONDecoder().decode(APIError.self, from: errorData) {
+                        let errorInfo = try? JSONDecoder()
+                            .caseDecoder()
+                            .decode(APIError.self, from: errorData) {
                         self.logger.error("Request failed: \(errorInfo.description)")
                         return callback(.networkError, (nil, nil))
                     } else {

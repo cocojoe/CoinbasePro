@@ -10,7 +10,7 @@ import Foundation
 
 /// Data Model for Account Ledger Detail Information
 /// See [Account History](https://docs.gdax.com/#get-account-history)
-public struct AccountLedgerDetail {
+public struct AccountLedgerDetail: Decodable {
 
     public let orderId: String
     public let tradeId: String

@@ -25,7 +25,9 @@ class AccountLedgerSpec: QuickSpec {
         describe("decodable") {
             it("should decode and return AccountLedger from JSON") {
                 let jsonData = JSONData(fromFile: Constants.Accounts.JSONHistoryArray)
-                let result = try? JSONDecoder().decode([AccountLedger].self, from: jsonData)
+                let result = try? JSONDecoder()
+                    .caseDecoder()
+                    .decode([AccountLedger].self, from: jsonData)
                 expect(result?.first).to(beAnInstanceOf(AccountLedger.self))
             }
         }

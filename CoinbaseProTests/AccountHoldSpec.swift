@@ -25,7 +25,9 @@ class AccountHoldSpec: QuickSpec {
         describe("decodable") {
             it("should decode and return AccountHold from JSON") {
                 let jsonData = JSONData(fromFile: Constants.Accounts.JSONHoldArray)
-                let result = try? JSONDecoder().decode([AccountHold].self, from: jsonData)
+                let result = try? JSONDecoder()
+                    .caseDecoder()
+                    .decode([AccountHold].self, from: jsonData)
                 expect(result?.first).to(beAnInstanceOf(AccountHold.self))
             }
         }
