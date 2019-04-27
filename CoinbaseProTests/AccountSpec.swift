@@ -24,9 +24,11 @@ class AccountSpec: QuickSpec {
 
         describe("decodable") {
             it("should decode and return Account instance from JSON") {
-                let jsonData = JSONData(fromFile: Constants.Orders.JSONObject)
-                let result = try? JSONDecoder().decode(Order.self, from: jsonData)
-                expect(result).to(beAnInstanceOf(Order.self))
+                let jsonData = JSONData(fromFile: Constants.Accounts.JSONObject)
+                let result = try? JSONDecoder()
+                    .caseDecoder()
+                    .decode(Account.self, from: jsonData)
+                expect(result).to(beAnInstanceOf(Account.self))
             }
         }
 

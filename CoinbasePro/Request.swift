@@ -33,7 +33,9 @@ struct Request: Loggable {
                 return callback(error, (nil, nil))
             }
             do {
-                let model = try JSONDecoder().decode([T].self, from: jsonData)
+                let model = try JSONDecoder()
+                    .caseDecoder()
+                    .decode([T].self, from: jsonData)
                 return callback(nil, (model, result.1))
             } catch let parseError {
                 self.logger.error("Decodable failure: \(parseError)")
@@ -51,7 +53,9 @@ struct Request: Loggable {
                 return callback(error, nil)
             }
             do {
-                let model = try JSONDecoder().decode(model.self, from: jsonData)
+                let model = try JSONDecoder()
+                    .caseDecoder()
+                    .decode(model.self, from: jsonData)
                 return callback(nil, model)
             } catch let parseError {
                 self.logger.error("Decodable failure: \(parseError)")

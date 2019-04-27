@@ -25,7 +25,9 @@ class APIErrorSpec: QuickSpec {
         describe("decodable") {
             it("should decode and return APIError instance from account JSON") {
                 let jsonData = JSONData(fromFile: Constants.JSONAPIErrorObject)
-                let result = try? JSONDecoder().decode(APIError.self, from: jsonData)
+                let result = try? JSONDecoder()
+                    .caseDecoder()
+                    .decode(APIError.self, from: jsonData)
                 expect(result).to(beAnInstanceOf(APIError.self))
             }
         }

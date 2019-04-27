@@ -25,7 +25,9 @@ class OrderSpec: QuickSpec {
         describe("decodable") {
             it("should decode and return Order instance from JSON") {
                 let jsonData = JSONData(fromFile: Constants.Orders.JSONObject)
-                let result = try? JSONDecoder().decode(Order.self, from: jsonData)
+                let result = try? JSONDecoder()
+                    .caseDecoder()
+                    .decode(Order.self, from: jsonData)
                 expect(result).to(beAnInstanceOf(Order.self))
             }
         }

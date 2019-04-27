@@ -29,25 +29,4 @@ public struct Account {
     }
 }
 
-extension Account: Decodable {
-    enum CodingKeys: String, CodingKey {
-        case available
-        case balance
-        case currency
-        case hold
-        case id
-        case profileId = "profile_id"
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let available: String = try container.decode(String.self, forKey: .available)
-        let balance: String = try container.decode(String.self, forKey: .balance)
-        let currency: String = try container.decode(String.self, forKey: .currency)
-        let hold: String = try container.decode(String.self, forKey: .hold)
-        let id: String = try container.decode(String.self, forKey: .id)
-        let profileId: String = try container.decode(String.self, forKey: .profileId)
-
-        self.init(available: available, balance: balance, currency: currency, hold: hold, id: id, profileId: profileId)
-    }
-}
+extension Account: Decodable { }
