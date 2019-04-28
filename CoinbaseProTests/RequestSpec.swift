@@ -12,33 +12,33 @@ import Nimble
 
 class RequestSpec: QuickSpec {
     override func spec() {
-
+        
         describe("init") {
-
+            
             it("should init with default networkable instance") {
                 let request = Request(withAPIKey: Constants.APIKey, secret: Constants.APISecret, phrase: Constants.APIPhrase)
                 expect(request.network).to(beAnInstanceOf(NetworkFire.self))
             }
-
+            
             it("should init with mock networkable instance") {
                 let request = Request(withAPIKey: Constants.APIKey, secret: Constants.APISecret, phrase: Constants.APIPhrase, network: NetworkMock())
                 expect(request.network).to(beAnInstanceOf(NetworkMock.self))
             }
-
+            
         }
-
+        
         describe("request an array") {
-
+            
             var requestMock: NetworkMock!
             var request: Request!
-
+            
             beforeEach {
                 requestMock = NetworkMock()
                 request = Request(withAPIKey: Constants.APIKey, secret: Constants.APISecret, phrase: Constants.APIPhrase, network: requestMock)
             }
-
+            
             context("array decoding") {
-
+                
                 it("should decode a JSON array and yield a model array instance") {
                     requestMock.setJSONData(fromFile: Constants.JSONSimpleArray)
                     request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
@@ -46,7 +46,7 @@ class RequestSpec: QuickSpec {
                         expect(result.0).to(beAnInstanceOf(Array<SimpleModel>.self))
                     }
                 }
-
+                
                 it("should yield decode error when using bad json data") {
                     requestMock.setInvalidJSONData()
                     request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
@@ -54,7 +54,7 @@ class RequestSpec: QuickSpec {
                         expect(result.0).to(beNil())
                     }
                 }
-
+                
                 it("should yield network error when request failed") {
                     requestMock.setNetworkFailed()
                     request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
@@ -62,7 +62,7 @@ class RequestSpec: QuickSpec {
                         expect(result.0).to(beNil())
                     }
                 }
-
+                
                 it("should yield data error when data missing") {
                     requestMock.setMissingData()
                     request.array(model: SimpleModel.self, method: "GET", path: "/dummy") { error, result in
@@ -71,7 +71,7 @@ class RequestSpec: QuickSpec {
                     }
                 }
             }
-
+            
             context("object decoding") {
                 it("should decode a JSON object and yield a model instance") {
                     requestMock.setJSONData(fromFile: Constants.JSONSimpleObject)
@@ -80,7 +80,7 @@ class RequestSpec: QuickSpec {
                         expect($1).to(beAnInstanceOf(SimpleModel.self))
                     }
                 }
-
+                
                 it("should yield decode error when using bad json data") {
                     requestMock.setInvalidJSONData()
                     request.object(model: SimpleModel.self, method: "GET", path: "/dummy") {
@@ -88,7 +88,7 @@ class RequestSpec: QuickSpec {
                         expect($1).to(beNil())
                     }
                 }
-
+                
                 it("should yield network error when request failed") {
                     requestMock.setNetworkFailed()
                     request.object(model: SimpleModel.self, method: "GET", path: "/dummy") {
@@ -96,7 +96,7 @@ class RequestSpec: QuickSpec {
                         expect($1).to(beNil())
                     }
                 }
-
+                
                 it("should yield data error when data missing") {
                     requestMock.setMissingData()
                     request.object(model: SimpleModel.self, method: "GET", path: "/dummy") {
@@ -104,10 +104,19 @@ class RequestSpec: QuickSpec {
                         expect($1).to(beNil())
                     }
                 }
-
+                
             }
-
+            
+            context("body encoding") {
+                
+                it("should return a json string from dictionary") {
+                    let result = request.generateBody(withParameters: ["key1":"value1"])
+                    expect(result).to(equal("{\"key1\":\"value1\"}"))
+                }
+                
+            }
+            
         }
-
+        
     }
 }

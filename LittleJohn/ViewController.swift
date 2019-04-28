@@ -33,15 +33,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func btnAccount(_ sender: Any) {
-        self.demoAccounts()
+        self.retrieveAccounts()
     }
 
     @IBAction func btnOrders(_ sender: Any) {
-        self.demoOrders()
+        self.openOrders()
+    }
+    
+    @IBAction func btnMarketOrder(_ sender: Any) {
+        self.marketOrderBTC()
     }
 
     // MARK:- Accounts
-    private func demoAccounts() {
+    private func retrieveAccounts() {
         // Do any additional setup after loading the view, typically from a nib.
         guard let coinbase = self.coinbase else {
             return print("CoinbasePro Not Available")
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
 
                 accounts.forEach { print($0) }
 
-                // Pick First Account
+                // Select First Account
                 let accountID = accounts.first!.id
 
                 // Account Detail
@@ -78,7 +82,7 @@ class ViewController: UIViewController {
                 // Account History
                 coinbase
                     .accounts
-                    .limit(100)
+                    .limit(2)
                     .history(accountID) { error, result in
                         guard error == nil else {
                             return print(error ?? "")
@@ -91,11 +95,11 @@ class ViewController: UIViewController {
                         history.forEach { print($0) }
 
                         // Pagination Test
-                        if let pagination = result.pagination, let previous = pagination.previous {
+                        if let pagination = result.pagination, let next = pagination.next {
                             coinbase
                                 .accounts
                                 .limit(5)
-                                .nextPage(previous)
+                                .nextPage(next)
                                 .history(accountID) { error, result in
                                     if let history = result.accountLedger, !history.isEmpty {
                                         history.forEach { print($0) }
@@ -103,29 +107,11 @@ class ViewController: UIViewController {
                             }
                         }
                 }
-
-                // Account Holds
-                coinbase
-                    .accounts
-                    .holds(accountID) { error, result in
-
-                        guard error == nil else {
-                            return print(error ?? "")
-                        }
-
-                        // Check we have some holds
-                        guard let holds = result.accountHold, !holds.isEmpty else {
-                            return print("No Holds Available")
-                        }
-
-                        holds.forEach { print($0) }
-                }
-
         }
     }
 
     // MARK:- Orders
-    private func demoOrders() {
+    private func openOrders() {
 
         // Do any additional setup after loading the view, typically from a nib.
         guard let coinbase = self.coinbase else {
@@ -147,8 +133,22 @@ class ViewController: UIViewController {
 
                 orders.forEach { print($0) }
         }
-
-
+    }
+    
+    private func marketOrderBTC() {
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        guard let coinbase = self.coinbase else {
+            return print("CoinbasePro Not Available")
+        }
+        
+        coinbase
+            .orders
+            .buy(withPrice: "2400", size: "0.1", side: "buy", productId: "BTC-USD") { error, result in
+                print(error)
+                print(result)
+        }
+        
     }
 
 }

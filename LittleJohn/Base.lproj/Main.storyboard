@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,22 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PG8-mY-6wF">
-                                <rect key="frame" x="130" y="310.5" width="114" height="66"/>
+                                <rect key="frame" x="0.0" y="294" width="375" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dv-JH-iq0">
-                                        <rect key="frame" x="0.0" y="0.0" width="114" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Demo Account"/>
+                                        <state key="normal" title="Account History"/>
                                         <connections>
                                             <action selector="btnAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IsS-iI-16M"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esU-Y7-xe8">
-                                        <rect key="frame" x="0.0" y="33" width="114" height="33"/>
+                                        <rect key="frame" x="0.0" y="33" width="375" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Demo Order"/>
+                                        <state key="normal" title="Open Orders"/>
                                         <connections>
                                             <action selector="btnOrders:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2to-O9-mCY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9W-GC-S83">
+                                        <rect key="frame" x="0.0" y="66" width="375" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Market Order BTC"/>
+                                        <connections>
+                                            <action selector="btnMarketOrder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J5F-kE-mq4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -43,6 +50,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PG8-mY-6wF" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="KRr-ni-GuM"/>
                             <constraint firstItem="PG8-mY-6wF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="QJA-Cn-sek"/>
                             <constraint firstItem="PG8-mY-6wF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="dFd-KY-KJO"/>
                             <constraint firstItem="PG8-mY-6wF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pyB-BR-XgQ"/>

@@ -17,14 +17,16 @@ class NetworkMock: Networkable {
 
     var method: String?
     var requestURL: URL?
+    var body: String?
     var parameters: [String: String] = [:]
     var headers: [String: String] = [:]
 
-    func makeRequest(method: String, requestURL: URL, parameters: [String : String], headers: [String : String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
+    func makeRequest(method: String, requestURL: URL, body: String? = nil, parameters: [String : String], headers: [String : String], callback: @escaping (CoinbaseProError?, (Data?, Pagination?)) -> Void) {
         self.method = method
         self.requestURL = requestURL
         self.headers = headers
         self.parameters = parameters
+        self.body = body
         callback(error, (data, pagination))
     }
 

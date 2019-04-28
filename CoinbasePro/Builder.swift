@@ -8,13 +8,34 @@
 
 import Foundation
 
-protocol Builder {
-    var path: String { get }
-    var params: [String: String] { get set }
+public class Builder {
+
+    let request: Request
+
+    // MARK: Builder
+    let path: String
+    var params: [String: String] = [:]
+
+    init(path: String, request: Request) {
+        self.path = path
+        self.request = request
+    }
 }
 
-public protocol BuilderPagination {
-    func limit(_ limit: Int) -> Self
-    func nextPage(_ next: String) -> Self
-    func previousPage(_ prev: String) -> Self
+extension Builder: Paginator {
+
+    public func limit(_ limit: Int) -> Self {
+        self.params["limit"] = String(limit)
+        return self
+    }
+
+    public func nextPage(_ next: String) -> Self {
+        self.params["after"] = next
+        return self
+    }
+
+    public func previousPage(_ prev: String) -> Self {
+        self.params["before"] = prev
+        return self
+    }
 }
